@@ -1,49 +1,38 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-import TheMenu from './components/SelectExecMenu.vue'
+	import TheMenu from './components/SelectExecMenu.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+	
+  <div class="flex flex-col min-h-screen">
+		<!-- Header -->
+		<header class="bg-gray-500 p-4 text-white">
+			<h1 class="text-2xl">Exercise Collection Generator</h1>
+		</header>
 
-    <div class="wrapper">
-      <TheMenu />
-    </div>
-    
-  </header>
+		<div class="flex flex-1">
+			<!-- Sidebar -->
+			<aside class="bg-gray-400 text-white w-1/4 p-4">
+				<h2 class="text-xl">Configuration</h2>
+				
+				<!-- Grid Layout for Two Rows -->
+				<div class="grid grid-rows-3 gap-4">
+					<div>
+						<!-- First Row Content -->
+						<h3 class="text-lg">Filter</h3>
+						<!-- Content for the first row goes here -->
+						Filter filter filter to come
+					</div>
+					<TheMenu />
+				</div>
+			</aside>
 
-  <main>
-    <TheWelcome />
-  </main>
+			<!-- Main Content -->
+			<main class="flex-1 p-4">
+				<!-- Page content goes here -->
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+			</main>
+		</div>
+  </div>
+	
 </template>
-
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>

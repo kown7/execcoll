@@ -1,22 +1,20 @@
 <template>
-  <div class="flex justify-around w-4/5 mx-auto">
-    <div class="w-1/2 border p-4 bg-gray-100">
-      <h2 class="text-lg font-bold">Left List</h2>
-      <ul ref="leftList" class="sortable-list-ul">
-        <li v-for="item in leftList" :key="item.id" class="p-2 bg-white border mb-2 cursor-move">
-          {{ item.text }}
-        </li>
-      </ul>
-    </div>
-
-    <div class="w-1/2 border p-4 bg-gray-100">
-      <h2 class="text-lg font-bold">Right List</h2>
-      <ul ref="rightList" class="sortable-list-ul">
-        <li v-for="item in rightList" :key="item.id" class="p-2 bg-white border mb-2 cursor-move">
-          {{ item.text }}
-        </li>
-      </ul>
-    </div>
+  <div class="border p-4 bg-gray-100 text-gray-800">
+    <h2 class="text-lg font-bold">Selected Items</h2>
+    <ul ref="rightList" class="sortable-list-ul">
+      <li v-for="item in rightList" :key="item.id" class="p-2 bg-white border mb-2 cursor-move">
+        {{ item.text }}
+      </li>
+    </ul>
+  </div>
+	
+  <div class="border p-4 bg-gray-100 text-gray-800">
+    <h2 class="text-lg font-bold">Available Items</h2>
+    <ul ref="leftList" class="sortable-list-ul">
+      <li v-for="item in leftList" :key="item.id" class="p-2 bg-white border mb-2 cursor-move">
+        {{ item.text }}
+      </li>
+    </ul>
   </div>
 </template>
 
