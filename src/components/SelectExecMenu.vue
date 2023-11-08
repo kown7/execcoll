@@ -31,10 +31,6 @@
     </draggable>
   </div>
   
-  <rawDisplayer class="col-3" :value="list1" title="List 1" />
-  
-  <rawDisplayer class="col-3" :value="list2" title="List 2" />
-
 </template>
 
 <script>
