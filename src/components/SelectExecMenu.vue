@@ -1,94 +1,82 @@
 <template>
+  
   <div class="border p-4 bg-gray-100 text-gray-800">
     <h2 class="text-lg font-bold">Selected Items</h2>
-    <ul ref="rightList" class="sortable-list-ul">
-      <li v-for="item in rightList" :key="item.id" class="p-2 bg-white border mb-2 cursor-move">
-        {{ item.text }}
-      </li>
-    </ul>
+    <draggable
+      class="list-group"
+      :list="list1"
+      group="people"
+      @change="log"
+      itemKey="name"
+      >
+      <template #item="{ element, index }">
+        <div class="p-2 bg-white border mb-2 cursor-move">{{ element.name }} {{ index }}</div>
+      </template>
+    </draggable>
   </div>
-	
+  
+  
   <div class="border p-4 bg-gray-100 text-gray-800">
     <h2 class="text-lg font-bold">Available Items</h2>
-    <ul ref="leftList" class="sortable-list-ul">
-      <li v-for="item in leftList" :key="item.id" class="p-2 bg-white border mb-2 cursor-move">
-        {{ item.text }}
-      </li>
-    </ul>
+    <draggable
+      class="list-group"
+      :list="list2"
+      group="people"
+      @change="log"
+      itemKey="name"
+      >
+      <template #item="{ element, index }">
+        <div class="p-2 bg-white border mb-2 cursor-move">{{ element.name }} {{ index }}</div>
+      </template>
+    </draggable>
   </div>
+  
+  <rawDisplayer class="col-3" :value="list1" title="List 1" />
+  
+  <rawDisplayer class="col-3" :value="list2" title="List 2" />
+
 </template>
 
 <script>
-import Sortable from 'sortablejs';
+import draggable from "vuedraggable/src/vuedraggable";
 
 export default {
+  name: "two-lists",
+  display: "Two Lists",
+  order: 1,
+  components: {
+    draggable
+  },
   data() {
     return {
-      leftList: [
-        { id: 1, text: 'Item 1' },
-        { id: 2, text: 'Item 2' },
-        { id: 3, text: 'Item 3' },
+      list1: [
+        { name: "John", id: 1 },
+        { name: "Joao", id: 2 },
+        { name: "Jean", id: 3 },
+        { name: "Gerard", id: 4 }
       ],
-      rightList: [],
+      list2: [
+        { name: "Juan", id: 5 },
+        { name: "Edgard", id: 6 },
+        { name: "Johnson", id: 7 }
+      ]
     };
   },
-  mounted() {
-    const leftList = this.$refs.leftList;
-    const rightList = this.$refs.rightList;
-
-    new Sortable(leftList, {
-      group: 'sortable-lists',
-      onAdd: (evt) => {
-        this.handleListUpdate(evt.from, leftList, this.leftList);
-      },
-    });
-
-    new Sortable(rightList, {
-      group: 'sortable-lists',
-      onAdd: (evt) => {
-        this.handleListUpdate(evt.from, rightList, this.rightList);
-      },
-    });
-  },
   methods: {
-    handleListUpdate(oldList, newList, listData) {
-      const movedItem = listData.splice(oldList.dataset.oldindex, 1)[0];
-      listData.splice(newList.dataset.newindex, 0, movedItem);
+    add: function() {
+      this.list.push({ name: "Juan" });
     },
-  },
+    replace: function() {
+      this.list = [{ name: "Edgard" }];
+    },
+    clone: function(el) {
+      return {
+        name: el.name + " cloned"
+      };
+    },
+    log: function(evt) {
+      window.console.log(evt);
+    }
+  }
 };
 </script>
-
-<style scoped>
-.sortable-lists {
-  display: flex;
-  justify-content: space-around;
-  width: 80%;
-  margin: 0 auto;
-}
-
-.sortable-list {
-  width: 45%;
-  border: 1px solid #ccc;
-  padding: 10px;
-  background-color: #f9f9f9;
-}
-
-.sortable-list-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.sortable-list-ul li {
-  background-color: #fff;
-  border: 1px solid #ccc;
-  margin: 5px 0;
-  padding: 5px;
-  cursor: move;
-}
-
-.sortable-list-ul li.sortable-chosen {
-  background-color: #f0f0f0;
-}
-</style>
-
