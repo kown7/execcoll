@@ -1,0 +1,93 @@
+\documentclass[11pt,a4paper]{article}
+
+
+\usepackage[a4paper,nohead,margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb,latexsym,amsthm,epsfig,stmaryrd}
+\usepackage{german}
+\usepackage{enumerate}
+\usepackage[mathscr]{eucal}
+\usepackage[latin1]{inputenc}
+
+\newcommand{\h}{\mathcal{H}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Oc}{\mathbb{O}}
+\newcommand{\mf}{\mathfrak}
+\newcommand{\mb}{\mathbf}
+\newcommand{\mc}{\mathcal}
+\newcommand{\s}{\mathcal{S}}
+
+\newcommand{\bca}{\begin{cases}}
+\newcommand{\eca}{\end{cases}}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\bpm}{\begin{pmatrix}}
+\newcommand{\epm}{\end{pmatrix}}
+\newcommand{\bal}{\begin{align}}
+\newcommand{\eal}{\end{align}}
+
+\DeclareMathOperator{\supp}{supp}
+
+\newcounter{aufgabennum}
+\setcounter{aufgabennum}{22}
+\newcommand{\aufgabe}[1]{\subsubsection*{Aufgabe \theaufgabennum:\refstepcounter{aufgabennum}\ \ignorespaces #1}}
+
+\long\def\ignorethis#1{}
+\parindent0cm 
+
+\begin{document}
+
+\pagestyle{empty}
+
+\mbox{}\vspace{-1.8cm}
+\noindent    
+
+{\Large\bfseries
+Übungen zu Analysis 1}\\
+Universität Regensburg, Wintersemester 2017/18\\
+Prof.~Dr.~F. Finster, M. Akman
+\vspace{2mm}
+\hrule
+\vspace{5mm}
+\begin{center}
+	{\large\bfseries Übungsblatt 6}\\
+	\vspace{2mm}
+	{Abgabe: Freitag 01.12.2017 bis 12:00 Uhr}
+\end{center}
+\bigskip
+Im Folgenden seien $(a_n)_{n\in\N}$ und $(b_n)_{n\in\N}$ Folgen reeller (oder komplexer) Zahlen.
+\aufgabe{Wurzelkriterium (4 Punkte)} Beweisen Sie die folgenden Aussagen:
+\begin{itemize}
+	\item[i)] Gibt es ein $q\in\R$, $0<q<1$, und ein $N\in\N$, so dass für alle $n\geq N$ gilt
+	$$\sqrt[n]{|a_n|}\leq q\,,$$
+	dann konvergiert die Reihe $\sum_{n=1}^\infty a_n$ absolut.\\
+	\textit{Hinweis:} Verwenden Sie das Majorantenkriterium.
+	\item[ii)] Gilt $\sqrt[n]{|a_n|}\geq1$ für unendlich viele $n\in\N$, dann divergiert die Reihe $\sum_{n=1}^\infty a_n$.
+	\item[iii)] Zeigen Sie durch ein Beispiel, dass für $\lim_{n\rightarrow\infty}\sqrt[n]{|a_n|}=1$ keine Aussage über die Konvergenz der Reihe $\sum_{n=1}^\infty a_n$ gemacht werden kann.\\
+	\textit{Hinweis:} Ohne Beweis darf $\lim_{n\rightarrow\infty}\sqrt[n]{n}=1$ verwendet werden.
+\end{itemize} 
+
+\aufgabe{(4 Punkte)} Überprüfen Sie, ob die folgenden Reihen konvergieren: 
+\begin{itemize}
+	\item[i)] $$\sum_{n=0}^\infty \left(\frac{n^2}{2n^2+n+1}\right)^n$$
+	\item[ii)] $$\sum_{n=1}^\infty \frac{n!}{n^n}$$
+	\item[iii)] $$\sum_{n=1}^\infty \left(1-\frac{1}{n^2}\right)^n$$
+	\item[iv)] $$\sum_{n=2}^\infty \frac{2^{n+1}}{3\cdot 5^n}$$
+\end{itemize}
+Berechnen Sie den Wert der Reihe in Teil iv).
+
+\aufgabe{(2 Punkte)} 
+Die Reihe $\sum_{n=1}^\infty a_n$ sei absolut konvergent. Zeigen Sie, dass dann auch die Reihe $\sum_{n=1}^\infty a_n^2$ absolut konvergiert.
+\aufgabe{Widerspruchsbeweis (2 Punkte)}
+    Zeigen Sie, dass die Folge $a_n = n $ mit $n \in \N$ divergiert.
+
+\aufgabe{(4 Punkte)} \begin{itemize}
+	\item[i)] Sei $\sum_{n=1}^\infty a_n$ eine konvergente Reihe, und sei $(b_n)_{n\in\N}$ eine konvergente Folge. Konvergiert die Reihe $\sum_{n=1}^\infty a_nb_n$ ? (Beweis oder Gegenbeispiel!)
+	\item[ii)] Sei nun $\sum_{n=1}^\infty a_n$ eine absolut konvergente Reihe, und sei $(b_n)_{n\in\N}$ eine konvergente Folge. Was kann man hier über die Konvergenz der Reihe $\sum_{n=1}^\infty a_nb_n$ sagen? (Begründung!)
+\end{itemize}
+
+\end{document}

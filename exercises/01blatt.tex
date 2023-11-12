@@ -1,0 +1,366 @@
+
+\documentclass[12pt]{amsart}
+
+
+\textwidth 6.9in
+\evensidemargin +0.01in
+\oddsidemargin  -0.2in
+\topmargin -0.5in \textheight 9in
+
+\usepackage[dvips]{graphicx}
+\usepackage{hyperref,color,mathdots,accents,extarrows,bigints}
+\usepackage[all]{xypic}
+\usepackage[ngerman]{babel}
+\usepackage[ansinew]{inputenc}
+\usepackage{enumitem,amsmath,amsfonts,amssymb}
+\usepackage[all,graph]{xy}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{korollar}[theorem]{Korollar}
+\newtheorem{satz}[theorem]{Satz}
+\newtheorem*{satz*}{Satz}
+
+
+\theoremstyle{remark}
+\newtheorem*{bemerkung}{Bemerkung}
+\newtheorem*{definition}{Definition}
+\newtheorem*{notation}{Notation}
+\newtheorem*{beispiel}{Beispiel}
+\newtheorem*{beispiele}{Beispiele}
+\newtheorem*{konvention}{Konvention}
+\newtheorem*{behauptung}{Behauptung}
+\newtheorem*{aussage}{Aussage}
+
+\makeatletter
+\newcommand*{\textlabel}[2]{%
+  \edef\@currentlabel{#1}% Set target label
+  \phantomsection% Correct hyper reference link
+  #1\label{#2}% Print and store label
+}
+\makeatother
+
+\newcommand*{\medcap}{\mathbin{\scalebox{1.5}{\ensuremath{\cap}}}}%
+\newcommand*{\medcup}{\mathbin{\scalebox{1.5}{\ensuremath{\cup}}}}%
+\newcommand*{\bigforall}{\mathbin{\scalebox{1.2}{\ensuremath{\forall}}}}%
+\newcommand*{\bigexists}{\mathbin{\scalebox{1.2}{\ensuremath{\exists}}}}%
+
+\newcommand{\lmcup}[2]{\mbox{\small$\displaystyle\bigcup\limits_{#1}^{#2}$}} % large medium  cup
+\newcommand{\smcup}[2]{\mbox{\footnotesize$\displaystyle\bigcup\limits_{#1}^{#2}$}} % small medium cup
+\newcommand{\tmcup}[2]{\mbox{$\textstyle \bigcup\limits_{#1}^{#2}$}} % tiny medium cup 
+\newcommand{\ttmcup}[2]{\mbox{$\textstyle \bigcup\limits_{#1}^{#2}$}} % tiny medium sum
+\newcommand{\lmcap}[2]{\mbox{\small$\displaystyle\bigcap\limits_{#1}^{#2}$}} % large medium  cap
+\newcommand{\smcap}[2]{\mbox{\footnotesize$\displaystyle\bigcap\limits_{#1}^{#2}$}} % small medium cap
+\newcommand{\tmcap}[2]{\mbox{$\textstyle \bigcap\limits_{#1}^{#2}$}} % tiny medium cap 
+
+\def\bint{\textstyle \bigintssss}  
+\def\bbint{\textstyle \bigintsss}
+\def\bbbint{\textstyle\bigintss}
+\def\smdownarrow{\hspace{0.07cm}\downarrow}
+\def\smuparrow{\hspace{0.07cm}\uparrow}
+\def\D{\mathbb{D}}
+\def\Q{\mathbb{Q}} 
+\def\F{\mathbb{F}} 
+\def\Z{\mathbb{Z}} 
+\def\R{\mathbb{R}} 
+\def\C{\mathbb{C}}
+\def\N{\mathbb{N}} 
+\def\H{\mathbb{H}}
+
+
+\newcommand{\tmint}[2]{\mbox{\large$\int\limits_{#1}^{#2}$}} % tiny medium sum
+\newcommand{\opnormal}[1]{\operatorname{\textnormal{#1}}}
+
+\DeclareMathAlphabet{\mathbf}{OML}{cmm}{b}{it}
+
+\numberwithin{equation}{section}
+
+
+%================= to be deleted at the end
+\def\smup{\smuparrow}
+\def\smdown{\smdownarrow}
+\def\bnm{\begin{enumerate}} 
+\def\enm{\end{enumerate}}
+\def\bnml{\begin{enumerate}[leftmargin=1.2cm]}
+\def\bnmlf{\begin{enumerate}[leftmargin=1.2cm,font=\normalfont]}
+\def\bnmfl{\begin{enumerate}[leftmargin=1.2cm,font=\normalfont]}
+\def\bnmf{\begin{enumerate}[font=\normalfont]}
+\def\blue{\textcolor{blue}}
+\def\red{\textcolor{red}}
+\newcommand\dred{\textcolor{violet}}
+\def\green{\textcolor{Green}}
+\def\l{\lambda} 
+\def\ll{\langle} \def\rr{\rangle}
+\def\g{\gamma}  
+\def\bp{\begin{pmatrix}}  \def\ep{\end{pmatrix}} 
+\def\sm{\setminus}
+\def\bn{\begin{enumerate}} 
+\def\en{\end{enumerate}}
+\def\graph{\operatorname{Graph}}
+\def\ba{\begin{array}} \def\ea{\end{array}} 
+\def\L{\Lambda}
+\def\s{\sigma} 
+\def\ti{\tilde} 
+\def\QQ{\mathcal{Q}}
+\def\omegati{\omegaidetilde}
+\def\us{\underset}
+\def\ub{\underbrace}
+\def\eps{\epsilon}
+\def\ol{\overline}
+\def\suml{\sum\limits}
+\def\endd{\end{document}}
+\def\dt{\,dt}
+\def\dz{\,dz}
+\def\Re{\op{Re}}
+\def\Im{\op{Im}}
+\def\op{\operatorname}
+\def\BB{\mathcal{B}}
+\def\CC{\mathcal{C}}
+\def\DD{\mathcal{D}}
+\def\EE{\mathcal{E}}
+\def\FF{\mathcal{F}}
+\def\LL{\mathcal{L}}
+\def\TT{\mathcal{T}}
+\def\SS{\mathcal{S}}
+\def\UU{\mathcal{U}}
+\def\VV{\mathcal{V}}
+\def\NN{\mathcal{N}}
+\def\XX{\mathcal{X}}
+\def\WW{\mathcal{W}}
+\def\YY{\mathcal{Y}}
+\def\MM{\mathcal{M}}
+\def\PP{\mathcal{P}}
+\def\RR{\mathcal{R}}
+\def\AA{\mathcal{A}}
+\def\ZZ{\mathcal{Z}}
+\def\id{\op{id}}
+\def\grad{\op{grad}}
+\def\gram{\op{Gram}}
+\def\div{\op{div}}
+\def\vol{\op{Vol}}
+\newcommand{\mfbox}[1]{\footnotesize{\mbox{#1}}}
+
+\newcommand{\lmfrac}[2]{\mbox{\small$\displaystyle\frac{#1}{#2}$}}   % large medium frac
+\newcommand{\smfrac}[2]{\mbox{\footnotesize$\displaystyle\frac{#1}{#2}$}} % small medium frac
+\newcommand{\tmfrac}[2]{\mbox{\large$\frac{#1}{#2}$}} % tiny medium frac
+\newcommand{\ttmfrac}[2]{\mbox{$\textstyle\frac{#1}{#2}$}}
+\newcommand{\lmsum}[2]{\mbox{\small$\displaystyle\sum\limits_{#1}^{#2}$}} % large medium sum
+\newcommand{\smsum}[2]{\mbox{\footnotesize$\displaystyle\sum\limits_{#1}^{#2}$}} % small medium sum
+\newcommand{\tmsum}[2]{\mbox{$\textstyle \sum\limits_{#1}^{#2}$}} % tiny medium sum
+\newcommand{\ttmsum}[2]{\mbox{\footnotesize{$\textstyle \sum\limits_{#1}^{#2}$}}} % tiny medium sum
+\def\mindent{\hspace{1cm}}
+\def\mindentp{\hspace{1.2cm}}
+\def\angle{\sphericalangle}
+\def\delabc{\Delta_{ABC}}
+\def\delpqr{\Delta_{PQR}}
+\def\ac{\ol{AC}}
+\def\bc{\ol{BC}}
+\def\ab{\ol{AB}}
+\def\pq{\ol{PQ}}
+\def\pr{\ol{PR}}
+\def\qr{\ol{QR}}
+\def\sms{\setminus}
+\def\lac{\ell(\ol{AC})}
+\def\lbc{\ell(\ol{BC})}
+\def\lab{\ell(\ol{AB})}
+\def\lpq{\ell(\ol{PQ})}
+\def\lpr{\ell(\ol{PR})}
+\def\lqr{\ell(\ol{QR})}
+\def\E{\mathbb{E}}
+\DeclareMathAlphabet{\mathbf}{OML}{cmm}{b}{it}
+\def\nspace{\hspace{-0.3cm}}
+\newcommand{\nbox}[1]{\nspace\mfbox{#1}}
+\def\smup{\smuparrow}
+\def\smdown{\smdownarrow}
+\newcommand{\mraisebox}[2]{\mbox{\raisebox{#1}{$#2$}}}
+\def\strahl{\overrightarrow}
+\renewcommand{\smallmatrix}[4]{\Big( \hspace{-0.1cm}\mbox{\small{$\ba{cc}\hfill #1& \hfill #2 \\ \hfill #3& \hfill #4\ea$}}\hspace{-0.1cm} \Big)}
+\let\emptyset\varnothing
+\newcommand{\svector}[2]{\Big(\hspace{-0.1cm}\mbox{\small{$\ba{c}#1  \\ #2\ea$}} \hspace{-0.1cm}\Big)}
+\def\bnal{\begin{enumerate}[label=(\alph*),leftmargin=1.2cm]}
+
+
+\usepackage{tagging}
+\usetag{Solution}				% show these tags
+% \droptag{Solution}				% hide these tags; Options:
+
+
+
+
+
+\begin{document}
+
+
+                  %%%%%%%%%%%%%% Blattkopf %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent
+{\sc
+	Universit\"at Regensburg \hfill WS 2023/24 \\
+	Fakult\"at f\"ur Mathematik \hfill Elementargeometrie \\
+\begin{center}
+	2.\ \"Ubungsblatt\\
+\end{center}	
+}
+\begin{center}
+	 Dr. Claudio Paganini \\
+\end{center}
+\vspace{0.5cm}
+\medskip
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection*{Aufgabe 1}\mbox{}
+Sei $\phi: \E \rightarrow\E $ eine winkelerhaltende Abbildung, mit der Eigenschaft, dass f\"ur zwei Punkte $P,Q\in \E$, $P\neq Q$ gilt, dass $\phi(P)=P$ und $\phi(Q)=Q$. Ist $\phi$ die Identit\"atsabbildung?
+
+
+\begin{taggedblock}{Solution}
+    
+
+
+\smallskip 
+\noindent \emph{L\"osung.}\mbox{}
+Nein. Eine Spiegelung entlang der Geraden $g(P,Q)$ ist winkelerhaltend und l\"asst $g(P,Q)$ invariant, ist aber nicht die Identit\"at. 
+
+\end{taggedblock}
+
+
+\subsection*{Aufgabe 2}\mbox{}
+\bnal
+\item 
+Es sei $g=\{ P+t\cdot v\,|\, t\in \R\}$ eine Gerade mit Richtungsvektor $v=(a,b)\in \R^2$.
+Was ist der Richtungsvektor einer Gerade, welche senkrecht auf $g$ steht?
+\item Wir betrachten die Gerade 
+\[ \hspace{1cm} g\,\,:=\,\, \{ (2,3)+t\cdot (1,1)\,|\, t\in \R\}.\]
+Was ist die Spiegelung von $P=(-1,2)$ entlang von $g$?
+\enm
+
+\begin{taggedblock}{Solution}
+    
+
+
+\smallskip 
+\noindent \emph{L\"osung.}\mbox{}
+\bnal
+\item Ein m\"oglicher Richtungsvektor ist $(-b,a)$, denn $\svector{a}{b}\cdot \svector{-b}{a}=-ab+ab=0$.
+\item Es folgt aus (a), dass die Gerade $h$ durch $(-1,2)$, welche senkrecht auf $g$ steht, gegeben ist durch 
+$\{ (-1,2)+s\cdot (-1,1)\,|\,s\in \R\}$. Der Schnittpunkt $Q$ von $g$ und $h$ berechnet sich wie folgt:
+\[ \mindent \ba{crcl} (1)&\hspace{-0.2cm} 2+t\!\cdot\!  1 &\hspace{-0.2cm}=&\hspace{-0.2cm}-1+s\!\cdot\!  (-1)\\
+(2)&\hspace{-0.2cm}3+t\!\cdot\!  1&\hspace{-0.2cm}=&\hspace{-0.2cm} 2+s\!\cdot\!  1\ea \,\, \Rightarrow \,\,
+\ba{crcl} (1')&\hspace{-0.2cm} t &\hspace{-0.2cm}=&\hspace{-0.2cm}-3-s\\
+(2)&\hspace{-0.2cm}3+t&\hspace{-0.2cm}=&\hspace{-0.2cm} 2+ s\ea \,\, \Rightarrow 
+ \,\,3+(-3-s)\,=\,2+s\,\, \Rightarrow \,\,  s\,=\,-1.
+\]
+Wir erhalten nun $Q=(-1,2)+1\cdot  (-1,1)=(0,1)$. Das Spiegelbild ist jetzt gegeben durch den Punkt 
+$Q+(Q-P)=(0,1)+(1,-1)=(1,0)$. 
+\enm
+
+
+
+\begin{figure}[h]
+\begin{center}
+\input{spiegelung-explizit.pstex_t}
+\caption{}\label{fig:}
+\end{center}
+\end{figure}
+\end{taggedblock}
+
+
+\subsection*{Aufgabe 3}
+Es sei $A\subset \R^n$ eine Teilmenge. Wir sagen eine Abbildung $f\colon A\to A$ ist l\"angenerhaltend, wenn f\"ur alle $P,Q\in A$ gilt, dass $\|f(P)-f(Q)\|=\|P-Q\|$.
+\bnal
+\item Ist jede l\"angenerhaltende Abbildung injektiv?
+\item Ist jede l\"angenerhaltende Abbildung surjektiv?
+\enm
+
+
+\begin{taggedblock}{Solution}
+    
+
+
+
+\smallskip
+\noindent \emph{L\"osung.}\mbox{}
+\bnal
+\item Ja! Es seien $P,Q\in A$ mit  $P\ne Q$. Wir m\"ussen zeigen, dass $f(P)\ne f(Q)$.
+In der Tat  gilt 
+\[ \mindent \ba{rlll} \|f(P)-f(Q)\|&=\,\,\|P-Q\|&\ne\,\, 0\quad \Longrightarrow \,\, f(P)\ne f(Q).\\
+&\smup&\smup\\
+&\hspace{-1.6cm}\nbox{da $f$ l\"angenerhaltend}&\nbox{da $P\ne Q$}\ea\]
+\item Nein! Z.B.\ betrachten wir $A=[0,\infty)$ und $f\colon A\to A$, gegeben durch $f(x)=x+1$. Die Abbildung ist l\"angenerhaltend, aber nicht surjektiv, denn $0$ liegt beispielsweise nicht im Bild von $f$. 
+\enm 
+
+\end{taggedblock}
+
+\subsection*{Aufgabe 4}
+\mbox{}
+\bnal
+\item Geben Sie eine geometrische Definition der Spiegelung in einem Punkt $P\in \E$.
+\item Zeigen Sie, dass die Spiegelung im Ursprung $(0,0)\in \E=\R^2$ l\"angenerhaltend ist.
+\item 
+Wir kennen nun folgende Beispiele von l\"angenerhaltende Abbildung:
+\bnml
+\item[(i)] Verschiebung,
+\item[(ii)] Spiegelung entlang einer Gerade,
+\item[(iii)]  Drehung um einen Punkt.
+\enm
+Wie passen da die Punktspiegelung rein? Genauer gesagt, kann man Punkt\-spiegelungen durch Spiegelungen oder Drehungen beschreiben?
+\enm
+
+\begin{taggedblock}{Solution}
+\noindent \emph{L\"osung.}\mbox{}
+\bnal
+\item Es sei $P\in \E$ und $Q\in \E$ ein anderer  Punkt.
+Es sei $g=g(P,Q)$ die Gerade durch $P$ und $Q$. Wir definieren wir die Punktspiegelung von $Q$ als den Punkt $R$ auf $g(P,Q)$ mit den folgenden beiden Eigenschaften:
+\bnm
+\item[(1)] Der Punkt $R$ liegt auf der anderen Seite von $P$.
+\item[(2)] Es gilt $\ell(\ol{PR})=\ell(\ol{PQ})$.
+\enm
+\item Eine Punktspiegelung um $P$ ist das gleiche wie eine Drehung um $P$ um den Winkel $\pi$. 
+\enm
+\end{taggedblock}
+
+
+\subsection*{Aufgabe 5}
+Die Verkn\"upfung von zwei Verschiebungen ist nat\"urlich wiederum eine Verschiebung.
+\bnal
+\item Ist die Verkn\"upfung von zwei Drehungen wiederum eine Drehung? Die Drehungen k\"onnen dabei um zwei verschiedene Punkte erfolgen.
+\item Was kann man \"uber die Verkn\"upfung von zwei Spiegelungen entlang von zwei Geraden $g$ und $h$ sagen? 
+Ist dies wiederum eine Spiegelung? Oder eine andere Art von l\"angenerhaltender Abbildung?
+\enm
+
+\begin{taggedblock}{Solution}
+
+\noindent \emph{L\"osung.}\mbox{}
+\bnal
+\item Die Verkn\"upfung einer Drehung um den Punkt $P$ mit Drehwinkel $\alpha$ und einer Drehung um den Punkt $Q$ mit Drehwinkel $\beta$ ist  eine Drehung um einen (anderen) Punkt mit Drehwinkel $\alpha+\beta$, , au\ss er, wenn beide Drehwinkel $\pi$ sind, dan handelt es sich um eine Verschiebung. Wir werden das sp\"ater noch genauer diskutieren.
+\item Es seien $g$ und $h$ zwei Geraden. Wir unterscheiden zwei F\"alle
+\bnm
+\item[(1)] Wenn sich $g$ und $h$ in genau einem Punkt $P$ schneiden, dann ist die Verkn\"upfung der zwei Spiegelungen eine Drehung um den Punkt $P$. 
+Wir werden diese Aussage demn\"achst noch beweisen. 
+\item[(2)] Wenn sich $g$ und $h$ nicht schneiden, dann ist die Verkn\"upfung der zwei Spiegelungen eine Verschiebung.
+\enm
+\enm
+
+\end{taggedblock}
+
+\subsection*{Aufgabe 6}
+Es sei $g$ eine Gerade. Wir bezeichnen mit $s_g\colon \E\to \E$ die Spiegelung entlang von $g$. 
+\bnal
+\item Es sei $Q$ ein Punkt in $\E$. Vervollst\"andigen Sie folgenden Satz:  es gilt $s_g(Q)=Q$ genau dann, wenn ???????
+\item Es sei $h$ eine Gerade, welche parallel zu $g$ verl\"auft. Zeigen Sie, dass $s_g(h)$ ebenfalls parallel zu $g$ verl\"auft.
+\enm
+
+\begin{taggedblock}{Solution}
+\noindent \emph{L\"osung.}\mbox{}
+\bnal
+\item  Es gilt $s_g(Q)=Q$ genau dann, wenn $Q\in g$. 
+\item  Nehmen wir an, dass $s_g(h)$ nicht  parallel zu $g$ verl\"auft. Dann besitzen $s_g(h)$ und $g$ genau einen Schnittpunkt $P$.
+Da $P$ auf $g$ liegt folgt aus (a), dass $s_g(P)=P$. Wenn wir $s_g(h)$ also wieder zur\"uckspiegeln, dann sehen wir, dass $P$ ein Schnittpunkt von $g$ und $h$ ist. Also waren $g$ und $h$ nicht parallel.
+\enm
+\end{taggedblock}
+
+
+
+\end{document}

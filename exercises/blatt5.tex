@@ -1,0 +1,109 @@
+\documentclass[11pt,a4paper]{article}
+
+
+\usepackage[a4paper,nohead,margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb,latexsym,amsthm,epsfig,stmaryrd}
+\usepackage{german}
+\usepackage{enumerate}
+\usepackage[mathscr]{eucal}
+\usepackage[latin1]{inputenc}
+
+\newcommand{\h}{\mathcal{H}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Oc}{\mathbb{O}}
+\newcommand{\mf}{\mathfrak}
+\newcommand{\mb}{\mathbf}
+\newcommand{\mc}{\mathcal}
+\newcommand{\s}{\mathcal{S}}
+
+\newcommand{\bca}{\begin{cases}}
+\newcommand{\eca}{\end{cases}}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\bpm}{\begin{pmatrix}}
+\newcommand{\epm}{\end{pmatrix}}
+\newcommand{\bal}{\begin{align}}
+\newcommand{\eal}{\end{align}}
+
+\DeclareMathOperator{\supp}{supp}
+
+\newcounter{aufgabennum}
+\setcounter{aufgabennum}{18}
+\newcommand{\aufgabe}[1]{\subsubsection*{Aufgabe \theaufgabennum:\refstepcounter{aufgabennum}\ \ignorespaces #1}}
+
+\long\def\ignorethis#1{}
+\parindent0cm 
+
+\begin{document}
+
+\pagestyle{empty}
+
+\mbox{}\vspace{-1.8cm}
+\noindent    
+
+{\Large\bfseries
+Übungen zu Analysis 1}\\
+Universität Regensburg, Wintersemester 2017/18\\
+Prof.~Dr.~F. Finster, M. Akman
+\vspace{2mm}
+\hrule
+\vspace{5mm}
+\begin{center}
+	{\large\bfseries Übungsblatt 5}\\
+	\vspace{2mm}
+	{Abgabe: Freitag 24.11.2017 bis 12:00 Uhr}
+\end{center}
+\bigskip
+\aufgabe{Konvergenz}
+\begin{itemize}
+    \item[i)] Sei $(a_n)_{n \in \N}$ eine reelle Nullfolge und $(b_n)_{n \in
+        \N}$ eine komplexe Folge mit $|b_n| \leq a_n$. Beweisen Sie, dass
+        $(b_n)_{n \in \N}$ eine Nullfolge ist.
+    \item[ii)] Sei $(a_n)_{n \in \N}$ die Folge $a_n = \frac{1}{p(n)^2}$ mit 
+        \begin{align*} p(n) = \inf\{p \in \N | p^2 >
+        n\}.\end{align*} \\
+        Berechnen Sie mit Hilfe von i):\\
+        \begin{align*}\lim\limits_{n \rightarrow
+        \infty}{a_n}.\end{align*}\\
+        Begründen Sie Ihre Antwort.
+
+    \item[iii)] Sei $(a_n)_{n \in \N}$ eine Nullfolge. Außerdem sei $(b_n)_{n \in
+\N}$ eine Folge mit $b_n \neq 0 \quad \forall n \in \N$, für die $0$ kein
+Häufungspunkt ist. Zeigen Sie, dass \\
+        \begin{align*} \lim\limits_{n \rightarrow \infty}{\frac{a_n}{b_n}
+         = 0}. \end{align*}
+\end{itemize} 
+
+\aufgabe{} Untersuchen Sie die Folgen auf Konvergenz, und bestimmen Sie gegebenenfalls den Grenzwert:
+\begin{itemize}
+	\item[i)] $$\left(\frac{3n^7-4n^2+11}{2n^6-3n+2}\right)_{n\in\N}\:;$$
+	\item[ii)] $$\left(\frac{2n^5-12n^3+3}{3n^5-8n^2+6}\right)_{n\in\N}\:;$$
+	\item[iii)] $$\left(\frac{n^k}{n!}\right)_{n\in\N}\:,$$
+						wobei $k$ eine feste natürliche Zahl sei.
+\end{itemize}
+
+\aufgabe{} 
+\begin{itemize}
+	\item[i)] Sei $z\in\C$. Zeigen Sie: Konvergiert die Folge $(z^n)_{n\in\N}$ gegen ein $w\in\C$, dann gilt $w=zw$.
+	\item[ii)] Beweisen Sie, dass eine beschränkte Folge, die nicht konvergiert, mehr als einen Häufungspunkt besitzt.
+\end{itemize}
+
+\aufgabe{} Seien $a>0$ und $x_0>0$ gegeben. Wir betrachten die rekursiv definierte Folge
+\begin{equation*}
+	x_{n+1}=\frac{1}{2}\Big(x_n+\frac{a}{x_n}\Big)\,,
+	\label{rek}
+\end{equation*}
+also $x_1:=\frac{1}{2}\Big(x_0+\frac{a}{x_0}\Big)$, $x_2:=\frac{1}{2}\Big(x_1+\frac{a}{x_1}\Big)$, $x_3:=\frac{1}{2}\Big(x_2+\frac{a}{x_2}\Big)$, usw.
+\begin{itemize}
+	\item[i)] Beweisen Sie, dass $x_n^2-a\geq0$ für alle $n\in\N$. Folgern Sie daraus, dass $x_n\geq\sqrt{a}$ für alle $n\in\N$.
+	\item[ii)] Zeigen Sie, dass $x_n-x_{n+1}\geq0$ für alle $n\in\N$.
+	\item[iii)] Folgern Sie aus i) und ii), dass die Folge $(x_n)_{n\in\N}$ konvergiert. Zeigen Sie, dass gilt: $$\lim_{n\rightarrow\infty}x_n=\sqrt{a}\,.$$
+\end{itemize}
+
+
+\end{document}
