@@ -1,0 +1,30 @@
+[
+    {
+	"uuid": "e0b15089-4aa1-491d-b7bb-c12129bcf036",
+	"author": "Claudio Paganini",
+	"headers": ["07810d84-8fca-4f40-b2bf-cecf2561325b"],
+	"license": "MIT",
+	"content": "file://blatt4.tex"
+    },
+    {
+	"uuid": "6f1f4e21-705b-4c48-b872-a98bb8497a75",
+	"author": "Claudio Paganini",
+	"headers": ["07810d84-8fca-4f40-b2bf-cecf2561325b"],
+	"license": "MIT",
+	"content": "file://blatt4.1.tex"
+    },
+    {
+	"uuid": "a61fea5e-2d52-4713-a89c-255f83135611",
+	"author": "Claudio Paganini",
+	"headers": ["07810d84-8fca-4f40-b2bf-cecf2561325b"],
+	"license": "MIT",
+	"content": "file://blatt4.2.tex"
+    },
+    {
+	"uuid": "e8d1eb9e-01c6-4e2e-9d2b-b9f155cbf1ea",
+	"author": "Claudio Paganini",
+	"headers": ["07810d84-8fca-4f40-b2bf-cecf2561325b"],
+	"license": "MIT",
+	"content": "file://blatt4.3.tex"
+    }
+]
