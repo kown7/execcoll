@@ -1,0 +1,10 @@
+
+\aufgabe{Intervallschachtelung} Für ein Intervall $I\subset\R$ der Form $[a,b]$ mit $a<b$ definiert man die \textit{Länge} $|I|$ des Intervalls $I$ als $b-a$.\\
+Eine \textit{Intervallschachtelung} ist eine Folge $I_1,I_2,I_3,\ldots$ von Intervallen der Form $I_n=[a_n,b_n]\subset\R$ mit $a_n<b_n$, die folgende Eigenschaften besitzt:
+\begin{itemize}
+	\item[1.] $I_{n+1}\subset I_n$ für $n=1,2,3,\ldots$
+	\item[2.] Zu jedem $\varepsilon>0$ gibt es ein Intervall $I_n$ der Länge $|I_n|<\varepsilon$.
+\end{itemize}
+Zeigen Sie, dass es zu einer Intervallschachtelung $(I_n)_{n\in\N}$ genau eine reelle Zahl $a$ gibt, so dass $a\in I_n$ für alle $n\in\N$.\\
+
+\textit{Hinweis:} Beweisen Sie zuerst, dass man durch eine Intervallschachtelung zwei konvergente Folgen $(a_n)_{n\in\N}$ und $(b_n)_{n\in\N}$ erhält. Zeigen Sie dann, dass die jeweiligen Limites übereinstimmen, also $\lim_{n\rightarrow\infty}a_n=\lim_{n\rightarrow\infty}b_n$.
