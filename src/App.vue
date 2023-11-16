@@ -13,18 +13,8 @@
 		<div class="flex flex-1">
 			<!-- Sidebar -->
 			<aside class="bg-gray-400 text-white w-1/4 p-4">
-				<h2 class="text-xl">Configuration</h2>
-				
-				<!-- Grid Layout for Two Rows -->
-				<div class="grid grid-rows-3 gap-4">
-					<div>
-						<!-- First Row Content -->
-						<h3 class="text-lg">Filter</h3>
-						<!-- Content for the first row goes here -->
-						Filter filter filter to come
-					</div>
-					<TheMenu />
-				</div>
+				<h2 class="text-xl p-4">Configuration</h2>
+				<TheMenu />
 			</aside>
 
 			<!-- Main Content -->
