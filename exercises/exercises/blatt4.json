@@ -1,6 +1,7 @@
 [
     {
 	"uuid": "e0b15089-4aa1-491d-b7bb-c12129bcf036",
+	"title": "Zeigen Sie A",
 	"author": "Claudio Paganini",
 	"headers": ["07810d84-8fca-4f40-b2bf-cecf2561325b"],
 	"license": "MIT",
@@ -8,6 +9,7 @@
     },
     {
 	"uuid": "6f1f4e21-705b-4c48-b872-a98bb8497a75",
+	"title": "Zeigen Sie B",
 	"author": "Claudio Paganini",
 	"headers": ["07810d84-8fca-4f40-b2bf-cecf2561325b"],
 	"license": "MIT",
@@ -15,6 +17,7 @@
     },
     {
 	"uuid": "a61fea5e-2d52-4713-a89c-255f83135611",
+	"title": "Zeigen Sie C",
 	"author": "Claudio Paganini",
 	"headers": ["07810d84-8fca-4f40-b2bf-cecf2561325b"],
 	"license": "MIT",
@@ -22,6 +25,7 @@
     },
     {
 	"uuid": "e8d1eb9e-01c6-4e2e-9d2b-b9f155cbf1ea",
+	"title": "Zeigen Sie D",
 	"author": "Claudio Paganini",
 	"headers": ["07810d84-8fca-4f40-b2bf-cecf2561325b"],
 	"license": "MIT",
