@@ -1,5 +1,6 @@
 <script setup>
-	import TheMenu from './components/SelectExecMenu.vue'
+  import TheMenu from './components/SelectExerMenu.vue'
+  import GenDocView from './components/GenViewDocument.vue'
 </script>
 
 <template>
@@ -19,8 +20,8 @@
 
 			<!-- Main Content -->
 			<main class="flex-1 p-4">
-				<!-- Page content goes here -->
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+			  <!-- Page content goes here -->
+			  <GenDocView />
 			</main>
 		</div>
   </div>

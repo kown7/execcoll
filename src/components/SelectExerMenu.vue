@@ -35,7 +35,6 @@
 	  class="list-group"
 	  :list="list2"
 	  group="people"
-	  @change="log"
 	  itemKey="name"
 	  >
 	  <template #item="{ element, index }">
@@ -49,45 +48,38 @@
 </template>
 
 <script>
-  import draggable from "vuedraggable/src/vuedraggable";
-  import { filterExercises } from "../ManagerExercises.js"
+import draggable from "vuedraggable/src/vuedraggable";
+import { filterExercises } from "../ManagerExercises.js"
+import { useMainStore } from "../store/exercises";
+
 
 export default {
-  name: "two-lists",
-  display: "Two Lists",
-  order: 1,
-  components: {
-    draggable
-  },
-  
-  data() {
-    return {
-      list1: [],
-      list2: filterExercises({}),
-      isRowVisible: {
-        1: true,
-      },
-    };
-  },
-  
-  methods: {
-    toggleRowVisibility: function(rowNumber) {
-      this.isRowVisible[rowNumber] = !this.isRowVisible[rowNumber];
+    name: "two-lists",
+    display: "Two Lists",
+    order: 1,
+    components: {
+	draggable
     },
-    add: function() {
-      this.list.push({ name: "Juan" });
+    
+    data() {
+	return {
+	    list1: [],
+	    list2: filterExercises({}),
+	    isRowVisible: {
+		1: true,
+	    },
+	    mainStore: useMainStore(),
+	};
     },
-    replace: function() {
-      this.list = [{ name: "Edgard" }];
+    
+    methods: {
+	toggleRowVisibility: function(rowNumber) {
+	    this.isRowVisible[rowNumber] = !this.isRowVisible[rowNumber];
+	},
+	log: function(evt) {
+	    this.mainStore.set(this.list1);
+	    window.console.log(evt);
+	}
     },
-    clone: function(el) {
-      return {
-        name: el.name + " cloned"
-      };
-    },
-    log: function(evt) {
-      window.console.log(evt);
-    }
-  }
 };
 </script>
