@@ -49,7 +49,7 @@
 
 <script>
 import draggable from "vuedraggable/src/vuedraggable";
-import { filterExercises } from "../ManagerDocs.ts"
+import { filterExercises } from "../manager/ManagerDocs.ts"
 import { useMainStore } from "../store/exercises";
 
 
