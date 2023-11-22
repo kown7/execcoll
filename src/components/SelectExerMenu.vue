@@ -22,7 +22,7 @@
 	  @change="log"
 	  itemKey="name"
 	  >
-	  <template #item="{ element, index }">
+	  <template #item="{ element }">
             <div class="p-2 bg-white border mb-2 cursor-move">{{ element.title }} <br /> {{ element.uuid }}</div>
 	  </template>
 	</draggable>
