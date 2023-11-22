@@ -24,6 +24,11 @@ export interface ExerciseItem {
   content: string
 }
 
+export interface RetDoc {
+  document: any;
+  exception?: any;
+}
+
 export interface FilterExercises {
   author?: string;
 }
