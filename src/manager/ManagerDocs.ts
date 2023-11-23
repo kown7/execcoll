@@ -1,36 +1,40 @@
-import json from "./assets/data.json"
+import json from "../assets/data.json"
+import { createPdf } from "../access/AccessPDF.ts"
+import demostring from "./demo.txt?raw"
 
-export interface docCfgTemplate {
-  uuid: string;
-  fields: Map<string, string>;
-}
+export interface ManagerDocs {
+  docCfgTemplate: {
+    uuid: string;
+    fields: Map<string, string>;
+  }
 
-export interface docCfgItem {
-  uuid: string;
-  subElements: Array<string>;  // string of uuid
-}
+  docCfgItem: {
+    uuid: string;
+    subElements: Array<string>;  // string of uuid
+  }
 
-export interface docCfg {
-  itemSelection: Array<docCfgItem>;
-  template: docCfgTemplate;
-}
+  docCfg: {
+    itemSelection: Array<docCfgItem>;
+    template: docCfgTemplate;
+  }
 
-export interface ExerciseItem {
-  uuid: string;
-  author: string;
-  title: string;
-  headers: Array<string>;  // string of uuid
-  license?: string
-  content: string
-}
+  ExerciseItem: {
+    uuid: string;
+    author: string;
+    title: string;
+    headers: Array<string>;  // string of uuid
+    license?: string
+    content: string
+  }
 
-export interface RetDoc {
-  document: any;
-  exception?: any;
-}
+  RetDoc: {
+    document: any;
+    exception?: any;
+  }
 
-export interface FilterExercises {
-  author?: string;
+  FilterExercises: {
+    author?: string;
+  }
 }
 
 export function filterExercises(filter?: FilterExercises): Array<ExerciseItem> {
@@ -43,6 +47,6 @@ export function filterTemplates(filter?: FilterTemplates): Array<TemplateItem> {
   return json['templates']
 }
 
-export function generateDocument(cfg: docCfg) {
-  return null;
+export async function generateDocument(cfg: docCfg) {
+  return createPdf(demostring);
 }
