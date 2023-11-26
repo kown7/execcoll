@@ -1,6 +1,7 @@
-import json from "../assets/data.json"
 import { createPdf } from "../access/AccessPDF"
-import demostring from "./demo.txt?raw"
+import { filterItems, IFilterItems, FilterItemsType } from "../access/AccessItems"
+import { composeDocument } from "../engines/EngineItemComposer"
+
 
 export interface IDocCfgTemplate {
 	uuid: string;
@@ -17,7 +18,7 @@ export interface IDocCfg {
 	template: IDocCfgTemplate;
 }
 
-export interface ExerciseItem {
+export interface IExerciseItem {
 	uuid: string;
 	author: string;
 	title: string;
@@ -35,16 +36,15 @@ export interface IFilterExercises {
 	author?: string;
 }
 
-export function filterExercises(filter?: IFilterExercises): Array<ExerciseItem> {
+export function filterExercises(filter?: IFilterExercises): Array<IExerciseItem> {
 	// expose managed state as return value
-	return json['exercises']
+	const lfilter: Array<IFilterItems> = [{
+		itemType: FilterItemsType.Exercise,
+	}];
+	return filterItems(lfilter);
 }
 
-//export function filterTemplates(filter?: FilterTemplates): Array<TemplateItem> {
-//	// expose managed state as return value
-//	return json['templates']
-//}
-
 export async function generateDocument(cfg: IDocCfg) {
-	return createPdf(demostring);
+	let documentString = composeDocument(cfg);
+	return createPdf(documentString);
 }

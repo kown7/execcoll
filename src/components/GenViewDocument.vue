@@ -23,7 +23,7 @@
 <script lang="ts">
 import { onMounted, ref } from "vue";
 import { useMainStore } from "../store/exercises";
-import { generateDocument } from "../manager/ManagerDocs.ts";
+import { generateDocument, IDocCfg } from "../manager/ManagerDocs.ts";
 
 export default {
   name: "GenViewDocument",
@@ -37,9 +37,20 @@ export default {
       items.value = mainStore.items;
     });
 
+    const ControllerDocCfg = (itemsIn) => {
+      var itemsCfg : IDocCfg = {
+	itemSelection: itemsIn,
+	template: {
+	  uuid: "asdf",
+	  fields: [],
+	}
+      };
+      return itemsCfg;
+    }
+
     const compilebtn = async () => {
       const pdfbox = document.getElementById('pdfbox');
-      let r = await generateDocument(0)
+      let r = await generateDocument(ControllerDocCfg(mainStore.items))
       if (pdfbox && r.status == 0) {
         const pdfblob = new Blob([r.pdf], {type : 'application/pdf'});
         const objectURL = URL.createObjectURL(pdfblob);
