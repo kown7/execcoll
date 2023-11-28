@@ -1,5 +1,6 @@
 // Engine to stitch the various items together
-import { IFilterItems, filterItems } from "../access/AccessItems"
+import { IFilterItems, FilterItemsType, filterItems,
+  TemplateItem } from "../access/AccessItems"
 import demostring from "../manager/demo.txt?raw"
 
 export interface IDocCfgTemplate {
@@ -19,16 +20,57 @@ export interface IDocCfg {
 
 export function composeDocument(cfg: IDocCfg): string {
   var filterItemsArr: IFilterItems[] = [];
-  console.log(cfg);
-  for (var filteritem of cfg.itemSelection) {
+   for (var filteritem of cfg.itemSelection) {
     filterItemsArr.push({
+      itemType: FilterItemsType.Exercise,
       uuid: filteritem.uuid
     });
   }
-  console.log(filterItemsArr);
   var items = filterItems(filterItemsArr);
-  var itemsString = array.map(_ => _.content).join('\n');
-  console.log(itemsString);
-  docString = "";
-  return demostring; // docString;
+  var itemsString = items.map(_ => _.content).join('\n');
+
+  let filterHeaderUnique: string[] = [];
+  for (var item of items) {
+    for (var headeritem of item.headers) {
+      filterHeaderUnique.push(headeritem);
+    }
+  }
+  filterHeaderUnique = Array.from(new Set(filterHeaderUnique));
+  console.log(filterHeaderUnique);
+
+  let filterHeaderArr: IFilterItems[] = [];
+  for (let item of filterHeaderUnique) {
+    filterHeaderArr.push({
+      itemType: FilterItemsType.Header,
+      uuid: item,
+    });
+  }
+  var headers = filterItems(filterHeaderArr);
+  var headersString = headers.map(_ => _.content).join('\n');
+
+  var filterTemplate: IFilterItems[] = [{
+    itemType: FilterItemsType.Template,
+    uuid: cfg.template.uuid
+  }];
+  let template: TemplateItem = filterItems(filterTemplate)[0];
+
+  let docStr: string = template.content;
+  Object.entries(template.fields).forEach(([key, value], index) => {
+    if (value == "EXERCISES") {
+      let s = "((* " + value + " *))";
+      docStr = docStr.replace(s, itemsString);
+    }
+    else if (value == "HEADERS") {
+      let s = "((* " + value + " *))";
+      docStr = docStr.replace(s, headersString);
+    }
+    else {
+      let s = "((* " + value + " *))";
+      docStr = docStr.replace(s, "ASDF\n");
+      console.log(key, value, index);
+    }
+  });
+
+  console.log(docStr);
+  return docStr;
 }
