@@ -41,7 +41,7 @@ export default {
       var itemsCfg : IDocCfg = {
 	itemSelection: itemsIn,
 	template: {
-	  uuid: "asdf",
+	  uuid: "28253563-49d5-4769-9f09-cb7d61cd39b2",
 	  fields: [],
 	}
       };
@@ -59,6 +59,9 @@ export default {
         }, 30000);
         console.log(objectURL);
         pdfbox.innerHTML = `<embed src="${objectURL}" width="100%" height="400px" type="application/pdf">`;
+      }
+      else {
+	pdfbox.innerHTML = `<pre>${r.log}</pre>`;
       }
     };
 
