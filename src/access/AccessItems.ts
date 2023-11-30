@@ -47,55 +47,61 @@ class TemplateItem implements IResultItem {
   content: string;
 }
 
-export function filterItems(filter: Array<IFilterItems>): Array<IResultItem> {
-  // expose managed state as return value
-  var result: IResultItem[] = [];
-  console.log(filter);
+
+export function filterExerciseItems(filter: Array<IFilterItems>): Array<ExerciseItem> {
+  var result: ExerciseItem[] = [];
   for (var filterItem of filter) {
-    if (filterItem.itemType == FilterItemsType.Exercise) {
-      for (var item of json['exercises']) {
-	if (((!filterItem.uuid) || (item.uuid == filterItem.uuid)) &&
-	  ((!filterItem.author) || (item.author == filterItem.author))) {
-	    var r = new ExerciseItem();
-	    r.uuid = item.uuid;
-	    r.author = item.author;
-	    r.title = item.title;
-	    r.headers = item.headers;
-	    r.license = item.license;
-	    r.content = item.content;
-	    result.push(r);
-	  }
-      }
-    }
-    if (filterItem.itemType == FilterItemsType.Header) {
-      for (var item of json['headers']) {
-	if (((!filterItem.uuid) || (item.uuid == filterItem.uuid)) &&
-	  ((!filterItem.author) || (item.author == filterItem.author))) {
-	    var r = new HeaderItem();
-	    r.uuid = item.uuid;
-	    r.author = item.author;
-	    r.content = item.content;
-	    result.push(r);
-	  }
-      }
-    }
-    else if (filterItem.itemType == FilterItemsType.Template) {
-      for (var item of json['templates']) {
-	if (((!filterItem.uuid) || (item.uuid == filterItem.uuid))) {
-	  var r = new TemplateItem();
+    for (var item of json['exercises']) {
+      if (((!filterItem.uuid) || (item.uuid == filterItem.uuid)) &&
+	((!filterItem.author) || (item.author == filterItem.author))) {
+	  var r = new ExerciseItem();
 	  r.uuid = item.uuid;
-	  r.title = item.title;
 	  r.author = item.author;
-	  r.fields = item.fields;
+	  r.title = item.title;
+	  r.headers = item.headers;
 	  r.license = item.license;
 	  r.content = item.content;
 	  result.push(r);
 	}
+    }
+  }
+  return result;
+}
+
+
+export function filterHeadersItems(filter: Array<IFilterItems>): Array<HeaderItem> {
+  var result: HeaderItem[] = [];
+  for (var filterItem of filter) {
+    for (var item of json['headers']) {
+      if (((!filterItem.uuid) || (item.uuid == filterItem.uuid)) &&
+	((!filterItem.author) || (item.author == filterItem.author))) {
+	  var r = new HeaderItem();
+	  r.uuid = item.uuid;
+	  r.author = item.author;
+	  r.content = item.content;
+	  result.push(r);
+	}
+    }
+  }
+  return result;
+}
+
+export function filterTemplateItems(filter: Array<IFilterItems>): Array<TemplateItem> {
+  // expose managed state as return value
+  var result: TemplateItem[] = [];
+  for (var filterItem of filter) {
+    for (var item of json['templates']) {
+      if (((!filterItem.uuid) || (item.uuid == filterItem.uuid))) {
+	let r = new TemplateItem();
+	r.uuid = item.uuid;
+	r.title = item.title;
+	r.author = item.author;
+	r.fields = item.fields;
+	r.license = item.license;
+	r.content = item.content;
+	result.push(r);
       }
     }
   }
-  console.log(result);
   return result;
-
-  throw Error("Invalid Filter");
 }

@@ -1,7 +1,7 @@
 // Engine to stitch the various items together
-import { IFilterItems, FilterItemsType, filterItems,
+import { IFilterItems, FilterItemsType,
+  filterExerciseItems, filterHeadersItems, filterTemplateItems,
   TemplateItem } from "../access/AccessItems"
-import demostring from "../manager/demo.txt?raw"
 
 export interface IDocCfgTemplate {
   uuid: string;
@@ -26,7 +26,7 @@ export function composeDocument(cfg: IDocCfg): string {
       uuid: filteritem.uuid
     });
   }
-  var items = filterItems(filterItemsArr);
+  var items = filterExerciseItems(filterItemsArr);
   var itemsString = items.map(_ => _.content).join('\n');
 
   let filterHeaderUnique: string[] = [];
@@ -45,14 +45,14 @@ export function composeDocument(cfg: IDocCfg): string {
       uuid: item,
     });
   }
-  var headers = filterItems(filterHeaderArr);
+  var headers = filterHeadersItems(filterHeaderArr);
   var headersString = headers.map(_ => _.content).join('\n');
 
   var filterTemplate: IFilterItems[] = [{
     itemType: FilterItemsType.Template,
     uuid: cfg.template.uuid
   }];
-  let template: TemplateItem = filterItems(filterTemplate)[0];
+  let template: TemplateItem = filterTemplateItems(filterTemplate)[0];
 
   let docStr: string = template.content;
   Object.entries(template.fields).forEach(([key, value], index) => {
