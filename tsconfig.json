@@ -2,7 +2,10 @@
   "compilerOptions": {
     // ... other options
     "allowJs": true,
-    "checkJs": false
+    "checkJs": false,
+    "indentSize": 2,
+    "tabSize": 2,
+    "indentStyle": 2
   }
 }
 

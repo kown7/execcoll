@@ -14,7 +14,7 @@ export interface IFilterItems {
   searchString?: string
 }
 
-export interface IResultItem {
+interface IResultItem {
   uuid: string
   author?: string
   title?: string
@@ -23,7 +23,7 @@ export interface IResultItem {
   content: string
 }
 
-class ExerciseItem implements IResultItem {
+export class ExerciseItem implements IResultItem {
   uuid: string
   author: string
   title: string
@@ -32,13 +32,13 @@ class ExerciseItem implements IResultItem {
   content: string
 }
 
-class HeaderItem implements IResultItem {
+export class HeaderItem implements IResultItem {
   uuid: string
   author: string
   content: string
 }
 
-class TemplateItem implements IResultItem {
+export class TemplateItem implements IResultItem {
   uuid: string
   title: string
   author?: string
