@@ -1,15 +1,33 @@
 [
-    {
-	"uuid": "28253563-49d5-4769-9f09-cb7d61cd39b2",
-	"author": "Claudio Paganini",
-	"fields": [
-	    "HEADERS",
-	    "TITLE",
-	    "SUBTITLE",
-	    "EXERCISETITLE",
-	    "DEADLINE",
-	    "EXERCISES"
-	],
-	"content": "file://blatt4.tex"
-    }
+  {
+    "uuid": "28253563-49d5-4769-9f09-cb7d61cd39b2",
+    "author": "Claudio Paganini",
+    "fields": [
+      [
+        "HEADERS",
+        ""
+      ],
+      [
+        "TITLE",
+        "Title"
+      ],
+      [
+        "SUBTITLE",
+        "Subtitle"
+      ],
+      [
+        "EXERCISETITLE",
+        "Exercise Title"
+      ],
+      [
+        "DEADLINE",
+        "Deadline"
+      ],
+      [
+        "EXERCISES",
+        ""
+      ]
+    ],
+    "content": "file://blatt4.tex"
+  }
 ]

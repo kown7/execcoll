@@ -35,4 +35,4 @@ for rootdir in BASE_CONTENT:
                         content[rootdir].append(i)
 
 with open(JSON_FNAME, 'w+') as fptr:
-    json.dump(content, fptr)
+    json.dump(content, fptr, indent=4)
