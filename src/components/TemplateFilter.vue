@@ -19,7 +19,7 @@
         >
         <input
           v-if="stringValue[1]"
-          v-model="stringsArr[stringKey]"
+          v-model="stringsArr[stringValue[0]]"
           type="text"
           @change="updateStringMap"
           class="w-full border p-2 text-gray-700"
@@ -38,25 +38,28 @@ export default {
     return {
       selectedOption: -1,
       options: filterTemplates({}),
-      strings: new Map(),
-      stringsArr: new Array()
+      strings: null,
+      stringsArr: {},
+      mainStore: useMainStore()
     }
   },
   methods: {
     updateStrings() {
-      console.log(this.options)
-      // Update strings based on the selected option
       const selectedOptionData = this.options[this.selectedOption]
       if (selectedOptionData) {
         const strings = selectedOptionData.strings || new Map()
-        console.log(selectedOptionData.uuid)
+        this.mainStore.templateUuid = selectedOptionData.uuid
         this.strings = new Map(selectedOptionData.fields)
       } else {
         this.strings = new Map()
       }
     },
     updateStringMap() {
-      this.mainStore.setTemplate(this.stringsArr)
+      let i = new Map()
+      for (let [key, value] of Object.entries(this.stringsArr)) {
+        i.set(key, value)
+      }
+      this.mainStore.setTemplateOptions(i)
     }
   }
 }

@@ -62,16 +62,19 @@ export function composeDocument(cfg: IDocCfg): string {
 
   let docStr: string = template.content
   Object.entries(template.fields).forEach(([key, value], index) => {
-    if (value == 'EXERCISES') {
-      let s = '((* ' + value + ' *))'
+    if (value[0] == 'EXERCISES') {
+      let s = '((* ' + value[0] + ' *))'
       docStr = docStr.replace(s, itemsString)
-    } else if (value == 'HEADERS') {
-      let s = '((* ' + value + ' *))'
+    } else if (value[0] == 'HEADERS') {
+      let s = '((* ' + value[0] + ' *))'
       docStr = docStr.replace(s, headersString)
     } else {
-      let s = '((* ' + value + ' *))'
-      docStr = docStr.replace(s, 'ASDF\n')
-      console.log(key, value, index)
+      let s = '((* ' + value[0] + ' *))'
+      let repStr = ''
+      if (cfg.template.fields.has(value[0])) {
+        repStr = cfg.template.fields.get(value[0])
+      }
+      docStr = docStr.replace(s, repStr)
     }
   })
 

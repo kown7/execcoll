@@ -32,20 +32,9 @@ export default {
       items.value = mainStore.items
     })
 
-    const ControllerDocCfg = (itemsIn) => {
-      var itemsCfg: IDocCfg = {
-        itemSelection: itemsIn,
-        template: {
-          uuid: '28253563-49d5-4769-9f09-cb7d61cd39b2',
-          fields: []
-        }
-      }
-      return itemsCfg
-    }
-
     const compilebtn = async () => {
       const pdfbox = document.getElementById('pdfbox')
-      let r = await generateDocument(ControllerDocCfg(mainStore.items))
+      let r = await generateDocument(mainStore.generateConfig())
       if (pdfbox && r.status == 0) {
         const pdfblob = new Blob([r.pdf], { type: 'application/pdf' })
         const objectURL = URL.createObjectURL(pdfblob)
