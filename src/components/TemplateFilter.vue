@@ -21,6 +21,7 @@
           v-if="stringValue[1]"
           v-model="stringsArr[stringValue[0]]"
           type="text"
+	  v-on:input="updateStringMap"
           @change="updateStringMap"
           class="w-full border p-2 text-gray-700"
         />

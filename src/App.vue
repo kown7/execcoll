@@ -20,7 +20,7 @@ import GenDocView from './components/GenViewDocument.vue'
       </aside>
 
       <!-- Main Content -->
-      <main class="flex-1 p-4">
+      <main class="flex-1">
         <!-- Page content goes here -->
         <GenDocView />
       </main>

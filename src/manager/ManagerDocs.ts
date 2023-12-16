@@ -7,6 +7,12 @@ import {
 } from '../access/AccessItems'
 import { composeDocument } from '../engines/EngineItemComposer'
 
+
+export enum FileType {
+  PDF = 'PDF',
+  Source = 'SOURCE',
+}
+
 export interface IDocCfgTemplate {
   uuid: string
   fields: Map<string, string>
@@ -20,6 +26,7 @@ export interface IDocCfgItem {
 export interface IDocCfg {
   itemSelection: Array<IDocCfgItem>
   template: IDocCfgTemplate
+  docType: FileType
 }
 
 export interface IExerciseItem {
@@ -73,5 +80,10 @@ export function filterTemplates(filter?: IFilterTemplates): Array<ITemplateItem>
 
 export async function generateDocument(cfg: IDocCfg) {
   let documentString = composeDocument(cfg)
-  return createPdf(documentString)
+  if (cfg.docType == FileType.PDF) {
+    return createPdf(documentString)
+  } else if (cfg.docType == FileType.Source) {
+    return documentString
+  }
+  throw Error("Wrong configuration")
 }
