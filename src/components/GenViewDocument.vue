@@ -43,7 +43,7 @@
 
 
       <div v-show="selectedTab === 3" class="mt-4">
-	<div class="p-4" id="pdfsource"><pre>{{ pdfSource }}</pre></div>
+	<div class="p-4" id="pdfsource"><div style="white-space: pre;">{{ pdfSource }}</div></div>
       </div>
 
       <div v-show="selectedTab === 4" class="mt-4">
