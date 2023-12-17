@@ -1,0 +1,50 @@
+[
+    {
+	"uuid": "0a2abeb8-3df4-4408-acab-5a67d7a63e23",
+	"title": "Ist φ die Identitätsabbildung?",
+	"author": "Claudio Paganini",
+	"headers": ["45db2cb4-28db-443e-823d-afe3db722a45"],
+	"license": "MIT",
+	"content": "file://blatt01.1.tex"
+    },
+    {
+	"uuid": "62aece28-71d5-49d8-be7b-ef1cc75ec438",
+	"title": "Was ist der Richtungsvektor einer Gerade, welche senkrecht auf g steht?",
+	"author": "Claudio Paganini",
+	"headers": ["45db2cb4-28db-443e-823d-afe3db722a45"],
+	"license": "MIT",
+	"content": "file://blatt01.2.tex"
+    },
+    {
+	"uuid": "81a3d931-2436-44b4-af78-c115f90c5a4f",
+	"title": "Längenerhaltende Abbildung injektiv/surjektiv?",
+	"author": "Claudio Paganini",
+	"headers": ["45db2cb4-28db-443e-823d-afe3db722a45"],
+	"license": "MIT",
+	"content": "file://blatt01.3.tex"
+    },
+    {
+	"uuid": "8a309eea-b840-4677-aded-107070649b6f",
+	"title": "Punktspiegelungen beschreiben",
+	"author": "Claudio Paganini",
+	"headers": ["45db2cb4-28db-443e-823d-afe3db722a45"],
+	"license": "MIT",
+	"content": "file://blatt01.4.tex"
+    },
+    {
+	"uuid": "0a208863-0ed8-4fdd-aa22-4413783d9bd2",
+	"title": "Verknüpfung von zwei Verschiebungen",
+	"author": "Claudio Paganini",
+	"headers": ["45db2cb4-28db-443e-823d-afe3db722a45"],
+	"license": "MIT",
+	"content": "file://blatt01.5.tex"
+    },
+    {
+	"uuid": "0501d7e7-a8d9-4677-8ee9-98fe05b83aa5",
+	"title": "Parallelen zu Parallelen",
+	"author": "Claudio Paganini",
+	"headers": ["45db2cb4-28db-443e-823d-afe3db722a45"],
+	"license": "MIT",
+	"content": "file://blatt01.6.tex"
+    }
+]

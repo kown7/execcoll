@@ -1,0 +1,34 @@
+[
+  {
+    "uuid": "55922c49-dc96-4cda-93f8-affedeabe9cc",
+    "author": "Claudio Paganini",
+    "title": "Uni Ravensburg Fakultät für Mathematik - Elementargeometrie",
+    "fields": [
+      [
+        "TITLE",
+        "Title"
+      ],
+      [
+        "SUBTITLE",
+        "Subtitle"
+      ],
+      [
+        "EXERCISETITLE",
+        "Exercise Title"
+      ],
+      [
+        "AUTHOR",
+        "Author"
+      ],
+      [
+        "HEADERS",
+        ""
+      ],
+      [
+        "EXERCISES",
+        ""
+      ]
+    ],
+    "content": "file://blatt4.tex"
+  }
+]

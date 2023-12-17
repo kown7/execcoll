@@ -1,0 +1,40 @@
+\subsection*{Aufgabe 2}\mbox{}
+\bnal
+\item 
+Es sei $g=\{ P+t\cdot v\,|\, t\in \R\}$ eine Gerade mit Richtungsvektor $v=(a,b)\in \R^2$.
+Was ist der Richtungsvektor einer Gerade, welche senkrecht auf $g$ steht?
+\item Wir betrachten die Gerade 
+\[ \hspace{1cm} g\,\,:=\,\, \{ (2,3)+t\cdot (1,1)\,|\, t\in \R\}.\]
+Was ist die Spiegelung von $P=(-1,2)$ entlang von $g$?
+\enm
+
+\begin{taggedblock}{Solution}
+    
+
+
+\smallskip 
+\noindent \emph{L\"osung.}\mbox{}
+\bnal
+\item Ein m\"oglicher Richtungsvektor ist $(-b,a)$, denn $\svector{a}{b}\cdot \svector{-b}{a}=-ab+ab=0$.
+\item Es folgt aus (a), dass die Gerade $h$ durch $(-1,2)$, welche senkrecht auf $g$ steht, gegeben ist durch 
+$\{ (-1,2)+s\cdot (-1,1)\,|\,s\in \R\}$. Der Schnittpunkt $Q$ von $g$ und $h$ berechnet sich wie folgt:
+\[ \mindent \ba{crcl} (1)&\hspace{-0.2cm} 2+t\!\cdot\!  1 &\hspace{-0.2cm}=&\hspace{-0.2cm}-1+s\!\cdot\!  (-1)\\
+(2)&\hspace{-0.2cm}3+t\!\cdot\!  1&\hspace{-0.2cm}=&\hspace{-0.2cm} 2+s\!\cdot\!  1\ea \,\, \Rightarrow \,\,
+\ba{crcl} (1')&\hspace{-0.2cm} t &\hspace{-0.2cm}=&\hspace{-0.2cm}-3-s\\
+(2)&\hspace{-0.2cm}3+t&\hspace{-0.2cm}=&\hspace{-0.2cm} 2+ s\ea \,\, \Rightarrow 
+ \,\,3+(-3-s)\,=\,2+s\,\, \Rightarrow \,\,  s\,=\,-1.
+\]
+Wir erhalten nun $Q=(-1,2)+1\cdot  (-1,1)=(0,1)$. Das Spiegelbild ist jetzt gegeben durch den Punkt 
+$Q+(Q-P)=(0,1)+(1,-1)=(1,0)$. 
+\enm
+
+
+
+\begin{figure}[h]
+\begin{center}
+\input{spiegelung-explizit.pstex_t}
+\caption{}\label{fig:}
+\end{center}
+\end{figure}
+\end{taggedblock}
+

@@ -1,0 +1,157 @@
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{korollar}[theorem]{Korollar}
+\newtheorem{satz}[theorem]{Satz}
+\newtheorem*{satz*}{Satz}
+
+
+\theoremstyle{remark}
+\newtheorem*{bemerkung}{Bemerkung}
+\newtheorem*{definition}{Definition}
+\newtheorem*{notation}{Notation}
+\newtheorem*{beispiel}{Beispiel}
+\newtheorem*{beispiele}{Beispiele}
+\newtheorem*{konvention}{Konvention}
+\newtheorem*{behauptung}{Behauptung}
+\newtheorem*{aussage}{Aussage}
+
+
+\newcommand*{\medcap}{\mathbin{\scalebox{1.5}{\ensuremath{\cap}}}}%
+\newcommand*{\medcup}{\mathbin{\scalebox{1.5}{\ensuremath{\cup}}}}%
+\newcommand*{\bigforall}{\mathbin{\scalebox{1.2}{\ensuremath{\forall}}}}%
+\newcommand*{\bigexists}{\mathbin{\scalebox{1.2}{\ensuremath{\exists}}}}%
+
+\newcommand{\lmcup}[2]{\mbox{\small$\displaystyle\bigcup\limits_{#1}^{#2}$}} % large medium  cup
+\newcommand{\smcup}[2]{\mbox{\footnotesize$\displaystyle\bigcup\limits_{#1}^{#2}$}} % small medium cup
+\newcommand{\tmcup}[2]{\mbox{$\textstyle \bigcup\limits_{#1}^{#2}$}} % tiny medium cup 
+\newcommand{\ttmcup}[2]{\mbox{$\textstyle \bigcup\limits_{#1}^{#2}$}} % tiny medium sum
+\newcommand{\lmcap}[2]{\mbox{\small$\displaystyle\bigcap\limits_{#1}^{#2}$}} % large medium  cap
+\newcommand{\smcap}[2]{\mbox{\footnotesize$\displaystyle\bigcap\limits_{#1}^{#2}$}} % small medium cap
+\newcommand{\tmcap}[2]{\mbox{$\textstyle \bigcap\limits_{#1}^{#2}$}} % tiny medium cap 
+
+\def\bint{\textstyle \bigintssss}  
+\def\bbint{\textstyle \bigintsss}
+\def\bbbint{\textstyle\bigintss}
+\def\smdownarrow{\hspace{0.07cm}\downarrow}
+\def\smuparrow{\hspace{0.07cm}\uparrow}
+\def\D{\mathbb{D}}
+\def\Q{\mathbb{Q}} 
+\def\F{\mathbb{F}} 
+\def\Z{\mathbb{Z}} 
+\def\R{\mathbb{R}} 
+\def\C{\mathbb{C}}
+\def\N{\mathbb{N}} 
+\def\H{\mathbb{H}}
+
+
+\newcommand{\tmint}[2]{\mbox{\large$\int\limits_{#1}^{#2}$}} % tiny medium sum
+\newcommand{\opnormal}[1]{\operatorname{\textnormal{#1}}}
+
+\DeclareMathAlphabet{\mathbf}{OML}{cmm}{b}{it}
+
+
+
+%================= to be deleted at the end
+\def\smup{\smuparrow}
+\def\smdown{\smdownarrow}
+\def\bnm{\begin{enumerate}} 
+\def\enm{\end{enumerate}}
+\def\bnml{\begin{enumerate}[leftmargin=1.2cm]}
+\def\bnmlf{\begin{enumerate}[leftmargin=1.2cm,font=\normalfont]}
+\def\bnmfl{\begin{enumerate}[leftmargin=1.2cm,font=\normalfont]}
+\def\bnmf{\begin{enumerate}[font=\normalfont]}
+\def\blue{\textcolor{blue}}
+\def\red{\textcolor{red}}
+\newcommand\dred{\textcolor{violet}}
+\def\green{\textcolor{Green}}
+\def\l{\lambda} 
+\def\ll{\langle} \def\rr{\rangle}
+\def\g{\gamma}  
+\def\bp{\begin{pmatrix}}  \def\ep{\end{pmatrix}} 
+\def\sm{\setminus}
+\def\bn{\begin{enumerate}} 
+\def\en{\end{enumerate}}
+\def\graph{\operatorname{Graph}}
+\def\ba{\begin{array}} \def\ea{\end{array}} 
+\def\L{\Lambda}
+\def\s{\sigma} 
+\def\ti{\tilde} 
+\def\QQ{\mathcal{Q}}
+\def\omegati{\omegaidetilde}
+\def\us{\underset}
+\def\ub{\underbrace}
+\def\eps{\epsilon}
+\def\ol{\overline}
+\def\suml{\sum\limits}
+\def\endd{\end{document}}
+\def\dt{\,dt}
+\def\dz{\,dz}
+\def\Re{\op{Re}}
+\def\Im{\op{Im}}
+\def\op{\operatorname}
+\def\BB{\mathcal{B}}
+\def\CC{\mathcal{C}}
+\def\DD{\mathcal{D}}
+\def\EE{\mathcal{E}}
+\def\FF{\mathcal{F}}
+\def\LL{\mathcal{L}}
+\def\TT{\mathcal{T}}
+\def\SS{\mathcal{S}}
+\def\UU{\mathcal{U}}
+\def\VV{\mathcal{V}}
+\def\NN{\mathcal{N}}
+\def\XX{\mathcal{X}}
+\def\WW{\mathcal{W}}
+\def\YY{\mathcal{Y}}
+\def\MM{\mathcal{M}}
+\def\PP{\mathcal{P}}
+\def\RR{\mathcal{R}}
+\def\AA{\mathcal{A}}
+\def\ZZ{\mathcal{Z}}
+\def\id{\op{id}}
+\def\grad{\op{grad}}
+\def\gram{\op{Gram}}
+\def\div{\op{div}}
+\def\vol{\op{Vol}}
+\newcommand{\mfbox}[1]{\footnotesize{\mbox{#1}}}
+
+\newcommand{\lmfrac}[2]{\mbox{\small$\displaystyle\frac{#1}{#2}$}}   % large medium frac
+\newcommand{\smfrac}[2]{\mbox{\footnotesize$\displaystyle\frac{#1}{#2}$}} % small medium frac
+\newcommand{\tmfrac}[2]{\mbox{\large$\frac{#1}{#2}$}} % tiny medium frac
+\newcommand{\ttmfrac}[2]{\mbox{$\textstyle\frac{#1}{#2}$}}
+\newcommand{\lmsum}[2]{\mbox{\small$\displaystyle\sum\limits_{#1}^{#2}$}} % large medium sum
+\newcommand{\smsum}[2]{\mbox{\footnotesize$\displaystyle\sum\limits_{#1}^{#2}$}} % small medium sum
+\newcommand{\tmsum}[2]{\mbox{$\textstyle \sum\limits_{#1}^{#2}$}} % tiny medium sum
+\newcommand{\ttmsum}[2]{\mbox{\footnotesize{$\textstyle \sum\limits_{#1}^{#2}$}}} % tiny medium sum
+\def\mindent{\hspace{1cm}}
+\def\mindentp{\hspace{1.2cm}}
+\def\angle{\sphericalangle}
+\def\delabc{\Delta_{ABC}}
+\def\delpqr{\Delta_{PQR}}
+\def\ac{\ol{AC}}
+\def\bc{\ol{BC}}
+\def\ab{\ol{AB}}
+\def\pq{\ol{PQ}}
+\def\pr{\ol{PR}}
+\def\qr{\ol{QR}}
+\def\sms{\setminus}
+\def\lac{\ell(\ol{AC})}
+\def\lbc{\ell(\ol{BC})}
+\def\lab{\ell(\ol{AB})}
+\def\lpq{\ell(\ol{PQ})}
+\def\lpr{\ell(\ol{PR})}
+\def\lqr{\ell(\ol{QR})}
+\def\E{\mathbb{E}}
+\DeclareMathAlphabet{\mathbf}{OML}{cmm}{b}{it}
+\def\nspace{\hspace{-0.3cm}}
+\newcommand{\nbox}[1]{\nspace\mfbox{#1}}
+\def\smup{\smuparrow}
+\def\smdown{\smdownarrow}
+\newcommand{\mraisebox}[2]{\mbox{\raisebox{#1}{$#2$}}}
+\def\strahl{\overrightarrow}
+\renewcommand{\smallmatrix}[4]{\Big( \hspace{-0.1cm}\mbox{\small{$\ba{cc}\hfill #1& \hfill #2 \\ \hfill #3& \hfill #4\ea$}}\hspace{-0.1cm} \Big)}
+\let\emptyset\varnothing
+\newcommand{\svector}[2]{\Big(\hspace{-0.1cm}\mbox{\small{$\ba{c}#1  \\ #2\ea$}} \hspace{-0.1cm}\Big)}
+\def\bnal{\begin{enumerate}[label=(\alph*),leftmargin=1.2cm]}

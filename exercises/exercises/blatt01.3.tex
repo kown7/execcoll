@@ -1,0 +1,25 @@
+\subsection*{Aufgabe 3}
+Es sei $A\subset \R^n$ eine Teilmenge. Wir sagen eine Abbildung $f\colon A\to A$ ist l\"angenerhaltend, wenn f\"ur alle $P,Q\in A$ gilt, dass $\|f(P)-f(Q)\|=\|P-Q\|$.
+\bnal
+\item Ist jede l\"angenerhaltende Abbildung injektiv?
+\item Ist jede l\"angenerhaltende Abbildung surjektiv?
+\enm
+
+
+\begin{taggedblock}{Solution}
+    
+
+
+
+\smallskip
+\noindent \emph{L\"osung.}\mbox{}
+\bnal
+\item Ja! Es seien $P,Q\in A$ mit  $P\ne Q$. Wir m\"ussen zeigen, dass $f(P)\ne f(Q)$.
+In der Tat  gilt 
+\[ \mindent \ba{rlll} \|f(P)-f(Q)\|&=\,\,\|P-Q\|&\ne\,\, 0\quad \Longrightarrow \,\, f(P)\ne f(Q).\\
+&\smup&\smup\\
+&\hspace{-1.6cm}\nbox{da $f$ l\"angenerhaltend}&\nbox{da $P\ne Q$}\ea\]
+\item Nein! Z.B.\ betrachten wir $A=[0,\infty)$ und $f\colon A\to A$, gegeben durch $f(x)=x+1$. Die Abbildung ist l\"angenerhaltend, aber nicht surjektiv, denn $0$ liegt beispielsweise nicht im Bild von $f$. 
+\enm 
+
+\end{taggedblock}

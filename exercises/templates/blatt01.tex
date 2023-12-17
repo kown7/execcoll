@@ -1,0 +1,53 @@
+\documentclass[12pt]{amsart}
+
+\textwidth 6.9in
+\evensidemargin +0.01in
+\oddsidemargin  -0.2in
+\topmargin -0.5in \textheight 9in
+
+\usepackage[dvips]{graphicx}
+\usepackage{hyperref,color,mathdots,accents,extarrows,bigints}
+\usepackage[all]{xypic}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem,amsmath,amsfonts,amssymb}
+\usepackage[all,graph]{xy}
+
+((* HEADERS *))
+
+\makeatletter
+\newcommand*{\textlabel}[2]{%
+  \edef\@currentlabel{#1}% Set target label
+  \phantomsection% Correct hyper reference link
+  #1\label{#2}% Print and store label
+}
+\makeatother
+
+\numberwithin{equation}{section}
+
+\usepackage{tagging}
+\usetag{Solution}				% show these tags
+% \droptag{Solution}				% hide these tags; Options:
+
+\begin{document}
+
+%%%%%%%%%%%%%% Blattkopf %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent
+    {
+      \sc
+      ((* TITLE *))}\\
+      ((* SUBTITLE *))
+    \begin{center}
+      ((* EXERCISETITLE *)) \\
+\end{center}	
+}
+\begin{center}
+	 ((* AUTHOR *)) \\
+\end{center}
+\vspace{0.5cm}
+\medskip
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+((* EXERCISES *))
+
+\end{document}
