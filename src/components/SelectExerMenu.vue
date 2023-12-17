@@ -4,8 +4,8 @@
     <div class="flex justify-between items-center">
       <h3 class="text-lg">Exercises Configuration</h3>
       <button @click="toggleRowVisibility(1)" class="text-white focus:outline-none">
-	<span class="symbol" :class="{ hidden: !isRowVisible[1] }">&#x25B2;</span>
-	<span class="symbol" :class="{ hidden: isRowVisible[1] }">&#x25BC;</span>
+        <span class="symbol" :class="{ hidden: !isRowVisible[1] }">&#x25B2;</span>
+        <span class="symbol" :class="{ hidden: isRowVisible[1] }">&#x25BC;</span>
       </button>
     </div>
 
@@ -41,7 +41,6 @@ import draggable from 'vuedraggable/src/vuedraggable'
 import { filterExercises } from '../manager/ManagerDocs.ts'
 import { useMainStore } from '../store/exercises'
 
-
 export default {
   name: 'ExerMenu',
   display: 'Exercises Selector Menu',
@@ -55,7 +54,7 @@ export default {
       list1: [],
       list2: filterExercises({}),
       isRowVisible: {
-        1: true,
+        1: true
       },
       mainStore: useMainStore()
     }

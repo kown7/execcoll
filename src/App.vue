@@ -16,7 +16,7 @@ import GenDocView from './components/GenViewDocument.vue'
       <aside class="bg-gray-400 text-white flex-shrink-0 w-1/4 p-4">
         <h2 class="text-xl pb-4">Configuration</h2>
         <TemplateMenu />
-	<span class="p-4"></span>
+        <span class="p-4"></span>
         <TheMenu />
       </aside>
 

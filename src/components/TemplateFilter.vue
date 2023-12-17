@@ -3,13 +3,17 @@
     <div class="flex justify-between items-center">
       <h3 class="text-lg">Template Configuration</h3>
       <button @click="toggleRowVisibility(1)" class="text-white focus:outline-none">
-	<span class="symbol" :class="{ hidden: !isRowVisible[1] }">&#x25B2;</span>
-	<span class="symbol" :class="{ hidden: isRowVisible[1] }">&#x25BC;</span>
+        <span class="symbol" :class="{ hidden: !isRowVisible[1] }">&#x25B2;</span>
+        <span class="symbol" :class="{ hidden: isRowVisible[1] }">&#x25BC;</span>
       </button>
     </div>
 
-    <label class="block text-sm font-medium text-gray-700 mb-2"
-	   :class="{ hidden: !isRowVisible[1] }"> Select an option: </label>
+    <label
+      class="block text-sm font-medium text-gray-700 mb-2"
+      :class="{ hidden: !isRowVisible[1] }"
+    >
+      Select an option:
+    </label>
     <select
       v-model="selectedOption"
       @change="updateStrings"
@@ -25,13 +29,13 @@
       <p class="text-gray-700">Resulting Strings:</p>
       <div v-for="(stringValue, stringKey) in strings" :key="stringKey" class="mt-2">
         <label v-if="stringValue[1]" class="block text-sm font-medium text-gray-700">
-	  {{ stringValue[1] }}:
-	</label>
+          {{ stringValue[1] }}:
+        </label>
         <input
           v-if="stringValue[1]"
           v-model="stringsArr[stringValue[0]]"
           type="text"
-	  v-on:input="updateStringMap"
+          v-on:input="updateStringMap"
           @change="updateStringMap"
           class="w-full border p-2 text-gray-700"
         />
@@ -53,8 +57,8 @@ export default {
       stringsArr: {},
       mainStore: useMainStore(),
       isRowVisible: {
-        1: true,
-      },
+        1: true
+      }
     }
   },
   methods: {
@@ -77,7 +81,7 @@ export default {
     },
     toggleRowVisibility: function (rowNumber) {
       this.isRowVisible[rowNumber] = !this.isRowVisible[rowNumber]
-    },
+    }
   }
 }
 </script>

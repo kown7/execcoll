@@ -3,22 +3,32 @@
     <!-- Tab-like header -->
     <div class="flex p-4 space-x-4 bg-gray-300">
       <div class="pr-5">
-	<!-- Button in the top left corner -->
-	<button :class="['p-2', 'rounded',
-			{'bg-gray-500': isButtonDisabled},
-			{'bg-blue-500 text-white': !isButtonDisabled}]"
-		type="button" @click="compilebtn" id="compilebtn">
-	  Compile
-	</button>
+        <!-- Button in the top left corner -->
+        <button
+          :class="[
+            'p-2',
+            'rounded',
+            { 'bg-gray-500': isButtonDisabled },
+            { 'bg-blue-500 text-white': !isButtonDisabled }
+          ]"
+          type="button"
+          @click="compilebtn"
+          id="compilebtn"
+        >
+          Compile
+        </button>
       </div>
       <div
         v-for="(tab, index) in tabs"
         :key="index"
         @click="selectTab(index)"
-        :class="{ 'bg-gray-400 text-black': selectedTab === index,
-		'bg-gray-200': selectedTab !== index,
-		'cursor-pointer': true, 'p-2': true }"
-	>
+        :class="{
+          'bg-gray-400 text-black': selectedTab === index,
+          'bg-gray-200': selectedTab !== index,
+          'cursor-pointer': true,
+          'p-2': true
+        }"
+      >
         {{ tab.name }}
       </div>
     </div>
@@ -26,38 +36,35 @@
     <div class="p-4">
       <!-- Content based on selected tab -->
       <div v-show="selectedTab === 0" class="mt-4">
-	<div class="p-4" id="pdfbox"></div>
+        <div class="p-4" id="pdfbox"></div>
       </div>
 
       <div v-show="selectedTab === 1" class="mt-4">
-	<!-- Content for Tab 2 -->
-	<div>
+        <!-- Content for Tab 2 -->
+        <div>
           <p>Content for Tab 2</p>
           <p>yadda yadda</p>
-	</div>
+        </div>
       </div>
 
       <div v-show="selectedTab === 2" class="mt-4">
-	<div class="p-4" id="pdfconfig">{{ pdfConfig }}</div>
+        <div class="p-4" id="pdfconfig">{{ pdfConfig }}</div>
       </div>
 
-
-      <div v-show="selectedTab === 3" class="mt-4" style="overflow-x: auto;">
-	<div class="p-4" id="pdfsource">
-	  <div style="white-space: pre;font-family: monospace;">{{ pdfSource }}</div>
-	</div>
+      <div v-show="selectedTab === 3" class="mt-4" style="overflow-x: auto">
+        <div class="p-4" id="pdfsource">
+          <div style="white-space: pre; font-family: monospace">{{ pdfSource }}</div>
+        </div>
       </div>
 
       <div v-show="selectedTab === 4" class="mt-4">
-	<div class="p-4" id="pdflog"></div>
+        <div class="p-4" style="white-space: pre; font-family: monospace" id="pdflog"></div>
       </div>
 
       <!-- Add more content sections as needed -->
-
     </div>
   </div>
 </template>
-
 
 <script lang="ts">
 import { onMounted, ref, computed, watch } from 'vue'
@@ -78,17 +85,16 @@ export default {
       { name: 'Solutions' },
       { name: 'Configuration' },
       { name: 'Source' },
-      { name: 'Log' },
-    ]);
+      { name: 'Log' }
+    ])
 
-    const selectedTab = ref(0);
+    const selectedTab = ref(0)
     const selectTab = (index) => {
-      selectedTab.value = index;
-    };
-
+      selectedTab.value = index
+    }
 
     // const { isButtonDisabled } = toRefs(refs);
-    const isButtonDisabled = ref(false);
+    const isButtonDisabled = ref(false)
 
     onMounted(() => {
       items.value = mainStore.items
@@ -100,7 +106,7 @@ export default {
       let cfg = mainStore.generateConfig()
       cfg.docType = FileType.Source
       generateDocument(cfg).then((response) => {
-	pdfSource.value = response
+        pdfSource.value = response
       })
     })
 
@@ -133,7 +139,7 @@ export default {
       pdfConfig,
       pdfSource,
       isButtonDisabled
-    };
-  },
-};
+    }
+  }
+}
 </script>

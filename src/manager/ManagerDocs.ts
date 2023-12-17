@@ -7,10 +7,9 @@ import {
 } from '../access/AccessItems'
 import { composeDocument } from '../engines/EngineItemComposer'
 
-
 export enum FileType {
   PDF = 'PDF',
-  Source = 'SOURCE',
+  Source = 'SOURCE'
 }
 
 export interface IDocCfgTemplate {
@@ -85,5 +84,5 @@ export async function generateDocument(cfg: IDocCfg) {
   } else if (cfg.docType == FileType.Source) {
     return documentString
   }
-  throw Error("Wrong configuration")
+  throw Error('Wrong configuration')
 }
