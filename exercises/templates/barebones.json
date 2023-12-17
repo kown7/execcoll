@@ -1,0 +1,30 @@
+[
+  {
+    "uuid": "fe6da4eb-838b-4293-af75-ad4e3a7db1a5",
+    "title": "Barebones Template",
+    "AUTHOR!": "kown7",
+    "fields": [
+      [
+        "TITLE",
+        "Title"
+      ],
+      [
+        "DEADLINE",
+        "Datum"
+      ],
+      [
+        "AUTHOR",
+        "Author"
+      ],
+      [
+        "HEADERS",
+        ""
+      ],
+      [
+        "EXERCISES",
+        ""
+      ]
+    ],
+    "content": "file://barebones.tex"
+  }
+]
