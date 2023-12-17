@@ -2,6 +2,7 @@
   {
     "uuid": "28253563-49d5-4769-9f09-cb7d61cd39b2",
     "author": "Claudio Paganini",
+    "title": "Uni Ravensburg",
     "fields": [
       [
         "HEADERS",
@@ -26,6 +27,10 @@
       [
         "EXERCISES",
         ""
+      ],
+      [
+        "INITAUFGCNT",
+        "Initiale Aufgabennummer"
       ]
     ],
     "content": "file://blatt4.tex"
