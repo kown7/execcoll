@@ -1,22 +1,32 @@
 <template>
   <div class="grid gap-4">
-    <label class="block text-sm font-medium text-gray-700 mb-2"> Select an option: </label>
+    <div class="flex justify-between items-center">
+      <h3 class="text-lg">Template Configuration</h3>
+      <button @click="toggleRowVisibility(1)" class="text-white focus:outline-none">
+	<span class="symbol" :class="{ hidden: !isRowVisible[1] }">&#x25B2;</span>
+	<span class="symbol" :class="{ hidden: isRowVisible[1] }">&#x25BC;</span>
+      </button>
+    </div>
+
+    <label class="block text-sm font-medium text-gray-700 mb-2"
+	   :class="{ hidden: !isRowVisible[1] }"> Select an option: </label>
     <select
       v-model="selectedOption"
       @change="updateStrings"
       class="w-full border p-2 rounded-md text-gray-700"
+      :class="{ hidden: !isRowVisible[1] }"
     >
       <option v-for="(option, index) in options" :key="index" :value="index">
-        A {{ index }} {{ option['title'] }}
+        {{ index }} &ndash; {{ option['title'] }}
       </option>
     </select>
 
-    <div class="mt-4">
+    <div class="mt-4" :class="{ hidden: !isRowVisible[1] }">
       <p class="text-gray-700">Resulting Strings:</p>
       <div v-for="(stringValue, stringKey) in strings" :key="stringKey" class="mt-2">
-        <label v-if="stringValue[1]" class="block text-sm font-medium text-gray-700"
-          >{{ stringKey }} {{ stringValue[1] }}:</label
-        >
+        <label v-if="stringValue[1]" class="block text-sm font-medium text-gray-700">
+	  {{ stringValue[1] }}:
+	</label>
         <input
           v-if="stringValue[1]"
           v-model="stringsArr[stringValue[0]]"
@@ -41,7 +51,10 @@ export default {
       options: filterTemplates({}),
       strings: null,
       stringsArr: {},
-      mainStore: useMainStore()
+      mainStore: useMainStore(),
+      isRowVisible: {
+        1: true,
+      },
     }
   },
   methods: {
@@ -61,7 +74,10 @@ export default {
         i.set(key, value)
       }
       this.mainStore.setTemplateOptions(i)
-    }
+    },
+    toggleRowVisibility: function (rowNumber) {
+      this.isRowVisible[rowNumber] = !this.isRowVisible[rowNumber]
+    },
   }
 }
 </script>

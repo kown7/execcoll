@@ -4,13 +4,14 @@
     <div class="flex justify-between items-center">
       <h3 class="text-lg">Exercises Configuration</h3>
       <button @click="toggleRowVisibility(1)" class="text-white focus:outline-none">
-        Collapse
+	<span class="symbol" :class="{ hidden: !isRowVisible[1] }">&#x25B2;</span>
+	<span class="symbol" :class="{ hidden: isRowVisible[1] }">&#x25BC;</span>
       </button>
     </div>
 
     <div class="border p-4 bg-gray-100 text-gray-800" :class="{ hidden: !isRowVisible[1] }">
       <h2 class="text-lg font-bold">Filter</h2>
-      lipsum stuff
+      Here be dragons or filters.
     </div>
 
     <div class="border p-4 bg-gray-100 text-gray-800" :class="{ hidden: !isRowVisible[1] }">
@@ -18,8 +19,7 @@
       <draggable class="list-group" :list="list1" group="people" @change="log" itemKey="name">
         <template #item="{ element }">
           <div class="p-2 bg-white border mb-2 cursor-move">
-            {{ element.title }} <br />
-            {{ element.uuid }}
+            {{ element.title }}
           </div>
         </template>
       </draggable>
@@ -29,7 +29,7 @@
       <h2 class="text-lg font-bold">Available Items</h2>
       <draggable class="list-group" :list="list2" group="people" itemKey="name">
         <template #item="{ element, index }">
-          <div class="p-2 bg-white border mb-2 cursor-move">{{ element.name }} {{ index }}</div>
+          <div class="p-2 bg-white border mb-2 cursor-move">{{ element.title }}</div>
         </template>
       </draggable>
     </div>
@@ -41,9 +41,10 @@ import draggable from 'vuedraggable/src/vuedraggable'
 import { filterExercises } from '../manager/ManagerDocs.ts'
 import { useMainStore } from '../store/exercises'
 
+
 export default {
-  name: 'two-lists',
-  display: 'Two Lists',
+  name: 'ExerMenu',
+  display: 'Exercises Selector Menu',
   order: 1,
   components: {
     draggable
@@ -54,7 +55,7 @@ export default {
       list1: [],
       list2: filterExercises({}),
       isRowVisible: {
-        1: true
+        1: true,
       },
       mainStore: useMainStore()
     }

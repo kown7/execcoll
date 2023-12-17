@@ -78,6 +78,5 @@ export function composeDocument(cfg: IDocCfg): string {
     }
   })
 
-  console.log(docStr)
   return docStr
 }

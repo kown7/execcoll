@@ -13,9 +13,10 @@ import GenDocView from './components/GenViewDocument.vue'
 
     <div class="flex flex-1">
       <!-- Sidebar -->
-      <aside class="bg-gray-400 text-white w-1/4 p-4">
-        <h2 class="text-xl p-4">Configuration</h2>
+      <aside class="bg-gray-400 text-white flex-shrink-0 w-1/4 p-4">
+        <h2 class="text-xl pb-4">Configuration</h2>
         <TemplateMenu />
+	<span class="p-4"></span>
         <TheMenu />
       </aside>
 

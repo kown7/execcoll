@@ -42,8 +42,10 @@
       </div>
 
 
-      <div v-show="selectedTab === 3" class="mt-4">
-	<div class="p-4" id="pdfsource"><div style="white-space: pre;">{{ pdfSource }}</div></div>
+      <div v-show="selectedTab === 3" class="mt-4" style="overflow-x: auto;">
+	<div class="p-4" id="pdfsource">
+	  <div style="white-space: pre;font-family: monospace;">{{ pdfSource }}</div>
+	</div>
       </div>
 
       <div v-show="selectedTab === 4" class="mt-4">
@@ -119,7 +121,7 @@ export default {
         console.log(objectURL)
         pdfbox.innerHTML = `<embed src="${objectURL}" width="100%" style="height: 100vh;" type="application/pdf">`
       }
-      pdflog.innerHTML = `<pre>${r.log}</pre>`
+      pdflog.innerHTML = `${r.log}`
     }
 
     return {
