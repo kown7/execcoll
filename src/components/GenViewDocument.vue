@@ -68,7 +68,6 @@
       <div v-show="selectedTab === 6" class="mt-4">
         <div class="p-4" style="white-space: pre; font-family: monospace" id="pdflog"></div>
       </div>
-
     </div>
   </div>
 </template>
@@ -88,7 +87,7 @@ export default {
     TheMenu,
     TemplateMenu
   },
-  
+
   setup() {
     const items = ref()
     const mainStore = useMainStore()
@@ -155,7 +154,7 @@ export default {
       selectTab,
       pdfConfig,
       pdfSource,
-      isButtonDisabled,
+      isButtonDisabled
     }
   }
 }
