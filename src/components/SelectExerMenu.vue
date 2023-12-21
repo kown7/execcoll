@@ -20,7 +20,9 @@
           <h2 class="text-lg font-bold">Available Items</h2>
           <draggable class="list-group" :list="list2" group="people" itemKey="name">
             <template #item="{ element, index }">
-              <div class="p-2 bg-white border mb-2 cursor-move">{{ element.title }}</div>
+              <div class="p-2 bg-white border mb-2 cursor-move">
+		{{ element.title }} <br />
+		<img :src="`previews/${element.preview}`" /></div>
             </template>
           </draggable>
         </div>
@@ -32,7 +34,6 @@
           <draggable class="list-group" :list="list1" group="people" @change="log" itemKey="name">
             <template #item="{ element }">
               <div class="p-2 bg-white border mb-2 cursor-move">
-                <div class="pb-4">{{ element.title }}</div>
                 <img :src="`previews/${element.preview}`" />
               </div>
             </template>
