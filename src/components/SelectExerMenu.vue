@@ -19,7 +19,8 @@
       <draggable class="list-group" :list="list1" group="people" @change="log" itemKey="name">
         <template #item="{ element }">
           <div class="p-2 bg-white border mb-2 cursor-move">
-            {{ element.title }}
+	    <div class="pb-4">{{ element.title }} </div>
+	    <img :src="`previews/${ element.preview }`" >
           </div>
         </template>
       </draggable>

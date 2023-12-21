@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Tab-like header -->
-    <div class="flex p-4 space-x-4 bg-gray-300">
+    <div class="flex p-4 space-x-4 bg-gray-400">
       <div class="pr-5">
         <!-- Button in the top left corner -->
         <button
@@ -36,10 +36,18 @@
     <div class="p-4">
       <!-- Content based on selected tab -->
       <div v-show="selectedTab === 0" class="mt-4">
-        <div class="p-4" id="pdfbox"></div>
+        <TemplateMenu />
       </div>
 
       <div v-show="selectedTab === 1" class="mt-4">
+        <TheMenu />
+      </div>
+
+      <div v-show="selectedTab === 2" class="mt-4">
+        <div class="p-4" id="pdfbox"></div>
+      </div>
+
+      <div v-show="selectedTab === 3" class="mt-4">
         <!-- Content for Tab 2 -->
         <div>
           <p>Content for Tab 2</p>
@@ -47,21 +55,20 @@
         </div>
       </div>
 
-      <div v-show="selectedTab === 2" class="mt-4">
+      <div v-show="selectedTab === 4" class="mt-4">
         <div class="p-4" id="pdfconfig">{{ pdfConfig }}</div>
       </div>
 
-      <div v-show="selectedTab === 3" class="mt-4" style="overflow-x: auto">
+      <div v-show="selectedTab === 5" class="mt-4" style="overflow-x: auto">
         <div class="p-4" id="pdfsource">
           <div style="white-space: pre; font-family: monospace">{{ pdfSource }}</div>
         </div>
       </div>
 
-      <div v-show="selectedTab === 4" class="mt-4">
+      <div v-show="selectedTab === 6" class="mt-4">
         <div class="p-4" style="white-space: pre; font-family: monospace" id="pdflog"></div>
       </div>
 
-      <!-- Add more content sections as needed -->
     </div>
   </div>
 </template>
@@ -71,9 +78,17 @@ import { onMounted, ref, computed, watch } from 'vue'
 import { useMainStore } from '../store/exercises'
 import { generateDocument, FileType } from '../manager/ManagerDocs'
 
+import TheMenu from '../components/SelectExerMenu.vue'
+import TemplateMenu from '../components/TemplateFilter.vue'
+
 export default {
   name: 'GenViewDocument',
 
+  components: {
+    TheMenu,
+    TemplateMenu
+  },
+  
   setup() {
     const items = ref()
     const mainStore = useMainStore()
@@ -81,8 +96,10 @@ export default {
     const pdfSource = ref()
 
     const tabs = ref([
-      { name: 'Exercise' },
-      { name: 'Solutions' },
+      { name: 'Template' },
+      { name: 'Exercises' },
+      { name: 'Exercise PDF' },
+      { name: 'Solutions PDF' },
       { name: 'Configuration' },
       { name: 'Source' },
       { name: 'Log' }
@@ -138,7 +155,7 @@ export default {
       selectTab,
       pdfConfig,
       pdfSource,
-      isButtonDisabled
+      isButtonDisabled,
     }
   }
 }

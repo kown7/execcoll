@@ -21,6 +21,7 @@ interface IResultItem {
   headers?: Array<string> // string of uuid
   license?: string
   content: string
+  preview?: string
 }
 
 export class ExerciseItem implements IResultItem {
@@ -62,6 +63,7 @@ export function filterExerciseItems(filter: Array<IFilterItems>): Array<Exercise
         r.headers = item.headers
         r.license = item.license
         r.content = item.content
+        r.preview = item.preview
         result.push(r)
       }
     }
