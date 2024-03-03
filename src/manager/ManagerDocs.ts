@@ -37,6 +37,12 @@ export interface IExerciseItem {
   content: string
 }
 
+export interface ITagItem {
+  uuid: string
+  tag: string
+  selected: boolean
+}
+
 export interface ITemplateItem {
   uuid: string
   title: string
@@ -55,17 +61,34 @@ export interface IFilterExercises {
   author?: string
 }
 
+export interface IFilteredExercises {
+  exercises: Array<IExerciseItem>
+  tags: Array<ITagItem>
+}
+
 export interface IFilterTemplates {
   author?: string
 }
 
-export function filterExercises(filter?: IFilterExercises): Array<IExerciseItem> {
+class FilteredExercises implements IFilteredExercises {
+  exercises: Array<IExerciseItem>
+  tags: Array<ITagItem>
+
+  constructor(exercises: Array<IExerciseItem>, tags: Array<ITagItem>) {
+    this.exercises = exercises
+    this.tags = tags
+  }
+}
+
+export function filterExercises(filter?: IFilterExercises): IFilteredExercises {
   const lfilter: Array<IFilterItems> = [
     {
       itemType: FilterItemsType.Exercise
     }
   ]
-  return filterExerciseItems(lfilter)
+  let exercises: Array<IExerciseItem> = filterExerciseItems(lfilter)
+  let tags: Array<ITagItem> = []
+  return new FilteredExercises(exercises, tags)
 }
 
 export function filterTemplates(filter?: IFilterTemplates): Array<ITemplateItem> {

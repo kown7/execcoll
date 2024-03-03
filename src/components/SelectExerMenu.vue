@@ -60,7 +60,7 @@ export default {
   data() {
     return {
       list1: [],
-      list2: filterExercises({}),
+      list2: filterExercises({}).exercises,
       isRowVisible: {
         1: true
       },
