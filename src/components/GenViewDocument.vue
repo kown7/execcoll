@@ -17,6 +17,20 @@
         >
           Compile
         </button>
+        <button
+          :class="[
+            'p-2',
+            'mx-5',
+            'rounded',
+            { 'bg-gray-500': isButtonDisabled },
+            { 'bg-blue-500 text-white': !isButtonDisabled }
+          ]"
+          type="button"
+          @click="compilebtnsol"
+          id="compilebtnsol"
+        >
+          Compile Solution
+        </button>
       </div>
       <div
         v-for="(tab, index) in tabs"
@@ -49,10 +63,7 @@
 
       <div v-show="selectedTab === 3" class="mt-4">
         <!-- Content for Tab 2 -->
-        <div>
-          <p>Content for Tab 2</p>
-          <p>yadda yadda</p>
-        </div>
+        <div class="p-4" id="pdfsolbox"></div>
       </div>
 
       <div v-show="selectedTab === 4" class="mt-4">
@@ -126,6 +137,26 @@ export default {
       })
     })
 
+    const compilebtnsol = async () => {
+      const pdfsolbox = document.getElementById('pdfsolbox')
+      const pdflog = document.getElementById('pdflog')
+
+      isButtonDisabled.value = true
+      let rsol = await generateDocument(mainStore.generateConfig())
+      isButtonDisabled.value = false
+
+      if (pdfsolbox && rsol.status == 0) {
+        const pdfblob = new Blob([rsol.pdf], { type: 'application/pdf' })
+        const objectURL = URL.createObjectURL(pdfblob)
+        setTimeout(() => {
+          URL.revokeObjectURL(objectURL)
+        }, 30000)
+        console.log(objectURL)
+        pdfsolbox.innerHTML = `<embed src="${objectURL}" width="100%" style="height: 100vh;" type="application/pdf">`
+      }
+      pdflog.innerHTML = `${rsol.log}`
+    }
+
     const compilebtn = async () => {
       const pdfbox = document.getElementById('pdfbox')
       const pdflog = document.getElementById('pdflog')
@@ -149,6 +180,7 @@ export default {
     return {
       items,
       compilebtn,
+      compilebtnsol,
       tabs,
       selectedTab: computed(() => selectedTab.value),
       selectTab,

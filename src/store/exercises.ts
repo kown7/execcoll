@@ -8,6 +8,7 @@ import { IDocCfg, IDocCfgItem, IDocCfgTemplate, FileType } from '../manager/Mana
 class DocCfgTemplate implements IDocCfgTemplate {
   uuid: string
   fields: Map<string, string>
+  isoLang: string
 }
 
 class DocCfgItem implements IDocCfgItem {
@@ -33,7 +34,8 @@ export const useMainStore = defineStore({
     ({
       items: [],
       templateUuid: '',
-      templateStr: []
+      templateStr: [],
+      langCode: ''
     }) as RootState,
 
   actions: {
@@ -65,6 +67,7 @@ export const useMainStore = defineStore({
       let tpl = new DocCfgTemplate()
       tpl.uuid = this.templateUuid
       tpl.fields = new Map(this.templateStr)
+      tpl.isoLang = this.langCode
 
       let docCfgItems: DocCfgItem[] = []
       for (var item of this.items) {

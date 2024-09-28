@@ -15,6 +15,7 @@ export enum FileType {
 export interface IDocCfgTemplate {
   uuid: string
   fields: Map<string, string>
+  isoLang: string
 }
 
 export interface IDocCfgItem {

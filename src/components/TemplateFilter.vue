@@ -12,7 +12,24 @@
       class="block text-sm font-medium text-gray-700 mb-2"
       :class="{ hidden: !isRowVisible[1] }"
     >
-      Select an option:
+      Select output language:
+    </label>
+    <select
+      v-model="selectedLanguage"
+      @change="updateStrings"
+      class="w-full border p-2 rounded-md text-gray-700"
+      :class="{ hidden: !isRowVisible[1] }"
+    >
+      <option v-for="(language, index) in languageoptions" :key="index" :value="index">
+        {{ language['desc'] }}
+      </option>
+    </select>
+
+    <label
+      class="block text-sm font-medium text-gray-700 mb-2"
+      :class="{ hidden: !isRowVisible[1] }"
+    >
+      Select a template:
     </label>
     <select
       v-model="selectedOption"
@@ -53,6 +70,11 @@ export default {
     return {
       selectedOption: -1,
       options: filterTemplates({}),
+      languageoptions: [
+        { key: 'en', desc: 'English' },
+        { key: 'de', desc: 'Deutsch' }
+      ],
+      selectedLanguage: 1,
       strings: null,
       stringsArr: {},
       mainStore: useMainStore(),
@@ -67,6 +89,7 @@ export default {
       if (selectedOptionData) {
         const strings = selectedOptionData.strings || new Map()
         this.mainStore.templateUuid = selectedOptionData.uuid
+        this.mainStore.langCode = this.languageoptions[this.selectedLanguage]['key']
         this.strings = new Map(selectedOptionData.fields)
       } else {
         this.strings = new Map()
