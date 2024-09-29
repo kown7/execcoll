@@ -83,7 +83,6 @@ export default {
     },
     log: function (evt) {
       this.mainStore.set(this.list1)
-      window.console.log(evt)
     }
   }
 }
