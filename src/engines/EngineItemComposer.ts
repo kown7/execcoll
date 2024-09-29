@@ -21,6 +21,8 @@ export interface IDocCfgItem {
 export interface IDocCfg {
   itemSelection: Array<IDocCfgItem>
   template: IDocCfgTemplate
+  isoLang: string
+  solution: boolean
 }
 
 export function composeDocument(cfg: IDocCfg): string {
@@ -51,6 +53,19 @@ export function composeDocument(cfg: IDocCfg): string {
   }
   var headers = filterHeadersItems(filterHeaderArr)
   var headersString = headers.map((_) => _.content).join('\n')
+
+  if (cfg.isoLang == 'de') {
+    headersString += '\\usetag{GermanExercise}'
+    if (cfg.solution) {
+      headersString += '\\usetag{GermanSolution}'
+    }
+  }
+  else { // elseif (cfg.isoLang == 'en')
+    headersString += '\\usetag{EnglishExercise}'
+    if (cfg.solution) {
+      headersString += '\\usetag{EnglishSolution}'
+    }
+  }
 
   var filterTemplate: IFilterItems[] = [
     {

@@ -15,7 +15,6 @@ export enum FileType {
 export interface IDocCfgTemplate {
   uuid: string
   fields: Map<string, string>
-  isoLang: string
 }
 
 export interface IDocCfgItem {
@@ -26,6 +25,8 @@ export interface IDocCfgItem {
 export interface IDocCfg {
   itemSelection: Array<IDocCfgItem>
   template: IDocCfgTemplate
+  isoLang: string
+  solution: boolean
   docType: FileType
 }
 

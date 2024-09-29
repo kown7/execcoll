@@ -142,7 +142,7 @@ export default {
       const pdflog = document.getElementById('pdflog')
 
       isButtonDisabled.value = true
-      let rsol = await generateDocument(mainStore.generateConfig())
+      let rsol = await generateDocument(mainStore.generateConfig(true))
       isButtonDisabled.value = false
 
       if (pdfsolbox && rsol.status == 0) {

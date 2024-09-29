@@ -8,7 +8,6 @@ import { IDocCfg, IDocCfgItem, IDocCfgTemplate, FileType } from '../manager/Mana
 class DocCfgTemplate implements IDocCfgTemplate {
   uuid: string
   fields: Map<string, string>
-  isoLang: string
 }
 
 class DocCfgItem implements IDocCfgItem {
@@ -19,6 +18,8 @@ class DocCfgItem implements IDocCfgItem {
 class DocCfg implements IDocCfg {
   itemSelection: Array<DocCfgItem>
   template: DocCfgTemplate
+  isoLang: string
+  solution: boolean
   docType: FileType = FileType.PDF
 }
 
@@ -63,11 +64,10 @@ export const useMainStore = defineStore({
       }
     },
 
-    generateConfig(): IDocCfg {
+    generateConfig(solution: boolean = false): IDocCfg {
       let tpl = new DocCfgTemplate()
       tpl.uuid = this.templateUuid
       tpl.fields = new Map(this.templateStr)
-      tpl.isoLang = this.langCode
 
       let docCfgItems: DocCfgItem[] = []
       for (var item of this.items) {
@@ -80,6 +80,8 @@ export const useMainStore = defineStore({
       let cfg = new DocCfg()
       cfg.template = tpl
       cfg.itemSelection = docCfgItems
+      cfg.isoLang = this.langCode
+      cfg.solution = solution
 
       console.log(cfg)
       // throw Error('yolo')
