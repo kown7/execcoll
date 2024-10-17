@@ -79,7 +79,7 @@ export function composeDocument(cfg: IDocCfg): string {
   Object.entries(template.fields).forEach(([key, value], index) => {
     if (value[0] == 'EXERCISES') {
       let s = '((* ' + value[0] + ' *))'
-      docStr = docStr.replace(s, itemsString)
+      docStr = docStr.replace(s, () => itemsString)
     } else if (value[0] == 'HEADERS') {
       let s = '((* ' + value[0] + ' *))'
       docStr = docStr.replace(s, headersString)
