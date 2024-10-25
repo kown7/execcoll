@@ -3,7 +3,14 @@
 // Inspired by:
 // https://dev.to/carlomigueldy/getting-started-with-vue-3-pinia-store-typescript-by-building-a-grocery-list-app-19km
 import { defineStore } from 'pinia'
-import { IDocCfg, IDocCfgItem, IDocCfgTemplate, FileType } from '../manager/ManagerDocs'
+import {
+  IDocCfg,
+  IDocCfgItem,
+  IDocCfgTemplate,
+  FileType,
+  IFilterExercises
+} from '../manager/ManagerDocs'
+import { filterExercises } from '../manager/ManagerDocs'
 
 class DocCfgTemplate implements IDocCfgTemplate {
   uuid: string

@@ -59,8 +59,8 @@ export function composeDocument(cfg: IDocCfg): string {
     if (cfg.solution) {
       headersString += '\\usetag{GermanSolution}'
     }
-  }
-  else { // elseif (cfg.isoLang == 'en')
+  } else {
+    // elseif (cfg.isoLang == 'en')
     headersString += '\\usetag{EnglishExercise}'
     if (cfg.solution) {
       headersString += '\\usetag{EnglishSolution}'
