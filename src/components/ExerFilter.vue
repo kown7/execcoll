@@ -8,13 +8,21 @@
       </button>
       <h3 class="text-lg">Exercises Filter</h3>
     </div>
-    <div :class="{ hidden: !isRowVisible[1] }">dinmi mueter</div>
+    <div :class="{ hidden: !isRowVisible[1] }">
+      <div>
+        Semesterwoche
+        <input
+          v-model="mainStore.fex.week"
+          id="semwoche"
+          class="shadow appearance-none border rounded w-20 py-2 px-3 mx-5 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import draggable from 'vuedraggable/src/vuedraggable'
-import { filterExercises } from '../manager/ManagerDocs.ts'
 import { useMainStore } from '../store/exercises'
 
 export default {

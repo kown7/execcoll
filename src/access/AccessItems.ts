@@ -11,6 +11,7 @@ export interface IFilterItems {
   itemType?: FilterItemsType
   uuid?: string
   author?: string
+  week?: number
   searchString?: string
 }
 
@@ -54,7 +55,8 @@ export function filterExerciseItems(filter: Array<IFilterItems>): Array<Exercise
     for (var item of json['exercises']) {
       if (
         (!filterItem.uuid || item.uuid == filterItem.uuid) &&
-        (!filterItem.author || item.author == filterItem.author)
+        (!filterItem.author || item.author == filterItem.author) &&
+        (!filterItem.week || item.semesterwoche == filterItem.week)
       ) {
         var r = new ExerciseItem()
         r.uuid = item.uuid

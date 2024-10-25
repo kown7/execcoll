@@ -23,10 +23,17 @@ class DocCfg implements IDocCfg {
   docType: FileType = FileType.PDF
 }
 
+class FilterExercises implements IFilterExercises {
+  week: number | null = null
+  author: string | null = null
+}
+
 export type RootState = {
   items: []
   templateUuid: string
   templateStr: []
+  langCode: string
+  fex: FilterExercises
 }
 
 export const useMainStore = defineStore({
@@ -36,7 +43,8 @@ export const useMainStore = defineStore({
       items: [],
       templateUuid: '',
       templateStr: [],
-      langCode: ''
+      langCode: '',
+      fex: new FilterExercises()
     }) as RootState,
 
   actions: {

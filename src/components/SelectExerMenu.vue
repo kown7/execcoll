@@ -13,14 +13,6 @@
 
     <div class="flex">
       <div class="w-1/2 p-4">
-        <div
-          class="border p-4 bg-gray-100 text-gray-800 mb-4"
-          :class="{ hidden: !isRowVisible[1] }"
-        >
-          <h2 class="text-lg font-bold">Filter</h2>
-          Here be dragons or filters.
-        </div>
-
         <div class="border p-4 bg-gray-100 text-gray-800" :class="{ hidden: !isRowVisible[1] }">
           <h2 class="text-lg font-bold">Available Items</h2>
           <draggable class="list-group" :list="list2" group="people" itemKey="name">
@@ -74,6 +66,17 @@ export default {
         1: true
       },
       mainStore: useMainStore()
+    }
+  },
+
+  watch: {
+    'mainStore.fex.week': {
+      handler() {
+        this.list2 = filterExercises(this.mainStore.fex).exercises
+      },
+
+      immediate: true,
+      deep: true
     }
   },
 

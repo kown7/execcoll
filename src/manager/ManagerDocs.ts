@@ -60,7 +60,8 @@ export interface IRetDoc {
 }
 
 export interface IFilterExercises {
-  author?: string
+  week?: number | null
+  author?: string | null
 }
 
 export interface IFilteredExercises {
@@ -85,7 +86,8 @@ class FilteredExercises implements IFilteredExercises {
 export function filterExercises(filter?: IFilterExercises): IFilteredExercises {
   const lfilter: Array<IFilterItems> = [
     {
-      itemType: FilterItemsType.Exercise
+      itemType: FilterItemsType.Exercise,
+      week: filter.week
     }
   ]
   let exercises: Array<IExerciseItem> = filterExerciseItems(lfilter)
