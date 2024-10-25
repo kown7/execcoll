@@ -1,0 +1,140 @@
+{
+  "templates": [
+    {
+      "uuid": "28253563-49d5-4769-9f09-cb7d61cd39b2",
+      "author": "Claudio Paganini",
+      "title": "Uni Ravensburg Analysis",
+      "fields": [
+        ["TITLE", "Title"],
+        ["SUBTITLE", "Subtitle"],
+        ["EXERCISETITLE", "Exercise Title"],
+        ["DEADLINE", "Deadline"],
+        ["INITAUFGCNT", "Initiale Aufgabennummer"],
+        ["HEADERS", ""],
+        ["EXERCISES", ""]
+      ],
+      "content": "\\documentclass[11pt,a4paper]{article}\n\n\\usepackage[a4paper,nohead,margin=2.5cm]{geometry}\n\\usepackage{amsmath,amssymb,latexsym,amsthm,epsfig,stmaryrd}\n\\usepackage{german}\n\\usepackage{enumerate}\n\\usepackage[mathscr]{eucal}\n\\usepackage[utf8]{inputenc}\n\n\\long\\def\\ignorethis#1{}\n\\parindent0cm \n\n((* HEADERS *))\n\n\\setcounter{aufgabennum}{((* INITAUFGCNT *))}\n\\begin{document}\n\n\\pagestyle{empty}\n\n\\mbox{}\\vspace{-1.8cm}\n\\noindent    \n\n{\\Large\\bfseries\n((* TITLE *))}\\\\\n((* SUBTITLE *))\n\\vspace{2mm}\n\\hrule\n\\vspace{5mm}\n\\begin{center}\n\t{\\large\\bfseries ((* EXERCISETITLE *))}\\\\\n\t\\vspace{2mm}\n\t{Abgabe: ((* DEADLINE *))}\n\\end{center}\n\\bigskip\n\n((* EXERCISES *))\n\n\\end{document}\n"
+    },
+    {
+      "uuid": "55922c49-dc96-4cda-93f8-affedeabe9cc",
+      "author": "Claudio Paganini",
+      "title": "Uni Ravensburg Fakult\u00e4t f\u00fcr Mathematik - Elementargeometrie",
+      "fields": [
+        ["TITLE", "Title"],
+        ["SUBTITLE", "Subtitle"],
+        ["EXERCISETITLE", "Exercise Title"],
+        ["AUTHOR", "Author"],
+        ["HEADERS", ""],
+        ["EXERCISES", ""]
+      ],
+      "content": "\\documentclass[12pt]{amsart}\n\n\\textwidth 6.9in\n\\evensidemargin +0.01in\n\\oddsidemargin  -0.2in\n\\topmargin -0.5in \\textheight 9in\n\n\\usepackage[dvips]{graphicx}\n\\usepackage{hyperref,color,mathdots,accents,extarrows,bigints}\n\\usepackage[all]{xypic}\n\\usepackage[ngerman]{babel}\n\\usepackage[utf8]{inputenc}\n\\usepackage{enumitem,amsmath,amsfonts,amssymb}\n\\usepackage[all,graph]{xy}\n\n((* HEADERS *))\n\n\\makeatletter\n\\newcommand*{\\textlabel}[2]{%\n  \\edef\\@currentlabel{#1}% Set target label\n  \\phantomsection% Correct hyper reference link\n  #1\\label{#2}% Print and store label\n}\n\\makeatother\n\n\\numberwithin{equation}{section}\n\n\\usepackage{tagging}\n\\usetag{Solution}\t\t\t\t% show these tags\n% \\droptag{Solution}\t\t\t\t% hide these tags; Options:\n\n\\begin{document}\n\n%%%%%%%%%%%%%% Blattkopf %%%%%%%%%%%%%%%%%%%%%%%%%%%%\n\\noindent\n    {\\sc\n      ((* TITLE *)) \\\\\n      ((* SUBTITLE *)) \\\\\n      \\begin{center}\n        ((* EXERCISETITLE *)) \\\\\n      \\end{center}\t\n    }\n\\begin{center}\n\t ((* AUTHOR *)) \\\\\n\\end{center}\n\\vspace{0.5cm}\n\\medskip\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n\n((* EXERCISES *))\n\n\\end{document}\n"
+    },
+    {
+      "uuid": "fe6da4eb-838b-4293-af75-ad4e3a7db1a5",
+      "title": "Barebones Template",
+      "AUTHOR!": "kown7",
+      "fields": [
+        ["TITLE", "Title"],
+        ["DEADLINE", "Datum"],
+        ["AUTHOR", "Author"],
+        ["HEADERS", ""],
+        ["EXERCISES", ""]
+      ],
+      "content": "\\documentclass[10pt,a4paper]{article}\n\n\\usepackage{amsmath,amssymb,latexsym,amsthm,epsfig,stmaryrd}\n\\usepackage{enumerate}\n\\usepackage[mathscr]{eucal}\n\\usepackage[utf8]{inputenc}\n\n((* HEADERS *))\n\n\\title{((* TITLE *))}\n\\date{((* DEADLINE *))}\n\\author{((* AUTHOR *))}\n\\begin{document}\n\n\\maketitle\n\\newpage\n\n((* EXERCISES *))\n\n\\end{document}\n"
+    }
+  ],
+  "headers": [
+    {
+      "uuid": "45db2cb4-28db-443e-823d-afe3db722a45",
+      "author": "Claudio Paganini",
+      "content": "\n\\theoremstyle{plain}\n\\newtheorem{theorem}{Theorem}[section]\n\\newtheorem{lemma}[theorem]{Lemma}\n\\newtheorem{korollar}[theorem]{Korollar}\n\\newtheorem{satz}[theorem]{Satz}\n\\newtheorem*{satz*}{Satz}\n\n\n\\theoremstyle{remark}\n\\newtheorem*{bemerkung}{Bemerkung}\n\\newtheorem*{definition}{Definition}\n\\newtheorem*{notation}{Notation}\n\\newtheorem*{beispiel}{Beispiel}\n\\newtheorem*{beispiele}{Beispiele}\n\\newtheorem*{konvention}{Konvention}\n\\newtheorem*{behauptung}{Behauptung}\n\\newtheorem*{aussage}{Aussage}\n\n\n\\newcommand*{\\medcap}{\\mathbin{\\scalebox{1.5}{\\ensuremath{\\cap}}}}%\n\\newcommand*{\\medcup}{\\mathbin{\\scalebox{1.5}{\\ensuremath{\\cup}}}}%\n\\newcommand*{\\bigforall}{\\mathbin{\\scalebox{1.2}{\\ensuremath{\\forall}}}}%\n\\newcommand*{\\bigexists}{\\mathbin{\\scalebox{1.2}{\\ensuremath{\\exists}}}}%\n\n\\newcommand{\\lmcup}[2]{\\mbox{\\small$\\displaystyle\\bigcup\\limits_{#1}^{#2}$}} % large medium  cup\n\\newcommand{\\smcup}[2]{\\mbox{\\footnotesize$\\displaystyle\\bigcup\\limits_{#1}^{#2}$}} % small medium cup\n\\newcommand{\\tmcup}[2]{\\mbox{$\\textstyle \\bigcup\\limits_{#1}^{#2}$}} % tiny medium cup \n\\newcommand{\\ttmcup}[2]{\\mbox{$\\textstyle \\bigcup\\limits_{#1}^{#2}$}} % tiny medium sum\n\\newcommand{\\lmcap}[2]{\\mbox{\\small$\\displaystyle\\bigcap\\limits_{#1}^{#2}$}} % large medium  cap\n\\newcommand{\\smcap}[2]{\\mbox{\\footnotesize$\\displaystyle\\bigcap\\limits_{#1}^{#2}$}} % small medium cap\n\\newcommand{\\tmcap}[2]{\\mbox{$\\textstyle \\bigcap\\limits_{#1}^{#2}$}} % tiny medium cap \n\n\\def\\bint{\\textstyle \\bigintssss}  \n\\def\\bbint{\\textstyle \\bigintsss}\n\\def\\bbbint{\\textstyle\\bigintss}\n\\def\\smdownarrow{\\hspace{0.07cm}\\downarrow}\n\\def\\smuparrow{\\hspace{0.07cm}\\uparrow}\n\\def\\D{\\mathbb{D}}\n\\def\\Q{\\mathbb{Q}} \n\\def\\F{\\mathbb{F}} \n\\def\\Z{\\mathbb{Z}} \n\\def\\R{\\mathbb{R}} \n\\def\\C{\\mathbb{C}}\n\\def\\N{\\mathbb{N}} \n\\def\\H{\\mathbb{H}}\n\n\n\\newcommand{\\tmint}[2]{\\mbox{\\large$\\int\\limits_{#1}^{#2}$}} % tiny medium sum\n\\newcommand{\\opnormal}[1]{\\operatorname{\\textnormal{#1}}}\n\n\\DeclareMathAlphabet{\\mathbf}{OML}{cmm}{b}{it}\n\n\n\n%================= to be deleted at the end\n\\def\\smup{\\smuparrow}\n\\def\\smdown{\\smdownarrow}\n\\def\\bnm{\\begin{enumerate}} \n\\def\\enm{\\end{enumerate}}\n\\def\\bnml{\\begin{enumerate}[leftmargin=1.2cm]}\n\\def\\bnmlf{\\begin{enumerate}[leftmargin=1.2cm,font=\\normalfont]}\n\\def\\bnmfl{\\begin{enumerate}[leftmargin=1.2cm,font=\\normalfont]}\n\\def\\bnmf{\\begin{enumerate}[font=\\normalfont]}\n\\def\\blue{\\textcolor{blue}}\n\\def\\red{\\textcolor{red}}\n\\newcommand\\dred{\\textcolor{violet}}\n\\def\\green{\\textcolor{Green}}\n\\def\\l{\\lambda} \n\\def\\ll{\\langle} \\def\\rr{\\rangle}\n\\def\\g{\\gamma}  \n\\def\\bp{\\begin{pmatrix}}  \\def\\ep{\\end{pmatrix}} \n\\def\\sm{\\setminus}\n\\def\\bn{\\begin{enumerate}} \n\\def\\en{\\end{enumerate}}\n\\def\\graph{\\operatorname{Graph}}\n\\def\\ba{\\begin{array}} \\def\\ea{\\end{array}} \n\\def\\L{\\Lambda}\n\\def\\s{\\sigma} \n\\def\\ti{\\tilde} \n\\def\\QQ{\\mathcal{Q}}\n\\def\\omegati{\\omegaidetilde}\n\\def\\us{\\underset}\n\\def\\ub{\\underbrace}\n\\def\\eps{\\epsilon}\n\\def\\ol{\\overline}\n\\def\\suml{\\sum\\limits}\n\\def\\endd{\\end{document}}\n\\def\\dt{\\,dt}\n\\def\\dz{\\,dz}\n\\def\\Re{\\op{Re}}\n\\def\\Im{\\op{Im}}\n\\def\\op{\\operatorname}\n\\def\\BB{\\mathcal{B}}\n\\def\\CC{\\mathcal{C}}\n\\def\\DD{\\mathcal{D}}\n\\def\\EE{\\mathcal{E}}\n\\def\\FF{\\mathcal{F}}\n\\def\\LL{\\mathcal{L}}\n\\def\\TT{\\mathcal{T}}\n\\def\\SS{\\mathcal{S}}\n\\def\\UU{\\mathcal{U}}\n\\def\\VV{\\mathcal{V}}\n\\def\\NN{\\mathcal{N}}\n\\def\\XX{\\mathcal{X}}\n\\def\\WW{\\mathcal{W}}\n\\def\\YY{\\mathcal{Y}}\n\\def\\MM{\\mathcal{M}}\n\\def\\PP{\\mathcal{P}}\n\\def\\RR{\\mathcal{R}}\n\\def\\AA{\\mathcal{A}}\n\\def\\ZZ{\\mathcal{Z}}\n\\def\\id{\\op{id}}\n\\def\\grad{\\op{grad}}\n\\def\\gram{\\op{Gram}}\n\\def\\div{\\op{div}}\n\\def\\vol{\\op{Vol}}\n\\newcommand{\\mfbox}[1]{\\footnotesize{\\mbox{#1}}}\n\n\\newcommand{\\lmfrac}[2]{\\mbox{\\small$\\displaystyle\\frac{#1}{#2}$}}   % large medium frac\n\\newcommand{\\smfrac}[2]{\\mbox{\\footnotesize$\\displaystyle\\frac{#1}{#2}$}} % small medium frac\n\\newcommand{\\tmfrac}[2]{\\mbox{\\large$\\frac{#1}{#2}$}} % tiny medium frac\n\\newcommand{\\ttmfrac}[2]{\\mbox{$\\textstyle\\frac{#1}{#2}$}}\n\\newcommand{\\lmsum}[2]{\\mbox{\\small$\\displaystyle\\sum\\limits_{#1}^{#2}$}} % large medium sum\n\\newcommand{\\smsum}[2]{\\mbox{\\footnotesize$\\displaystyle\\sum\\limits_{#1}^{#2}$}} % small medium sum\n\\newcommand{\\tmsum}[2]{\\mbox{$\\textstyle \\sum\\limits_{#1}^{#2}$}} % tiny medium sum\n\\newcommand{\\ttmsum}[2]{\\mbox{\\footnotesize{$\\textstyle \\sum\\limits_{#1}^{#2}$}}} % tiny medium sum\n\\def\\mindent{\\hspace{1cm}}\n\\def\\mindentp{\\hspace{1.2cm}}\n\\def\\angle{\\sphericalangle}\n\\def\\delabc{\\Delta_{ABC}}\n\\def\\delpqr{\\Delta_{PQR}}\n\\def\\ac{\\ol{AC}}\n\\def\\bc{\\ol{BC}}\n\\def\\ab{\\ol{AB}}\n\\def\\pq{\\ol{PQ}}\n\\def\\pr{\\ol{PR}}\n\\def\\qr{\\ol{QR}}\n\\def\\sms{\\setminus}\n\\def\\lac{\\ell(\\ol{AC})}\n\\def\\lbc{\\ell(\\ol{BC})}\n\\def\\lab{\\ell(\\ol{AB})}\n\\def\\lpq{\\ell(\\ol{PQ})}\n\\def\\lpr{\\ell(\\ol{PR})}\n\\def\\lqr{\\ell(\\ol{QR})}\n\\def\\E{\\mathbb{E}}\n\\DeclareMathAlphabet{\\mathbf}{OML}{cmm}{b}{it}\n\\def\\nspace{\\hspace{-0.3cm}}\n\\newcommand{\\nbox}[1]{\\nspace\\mfbox{#1}}\n\\def\\smup{\\smuparrow}\n\\def\\smdown{\\smdownarrow}\n\\newcommand{\\mraisebox}[2]{\\mbox{\\raisebox{#1}{$#2$}}}\n\\def\\strahl{\\overrightarrow}\n\\renewcommand{\\smallmatrix}[4]{\\Big( \\hspace{-0.1cm}\\mbox{\\small{$\\ba{cc}\\hfill #1& \\hfill #2 \\\\ \\hfill #3& \\hfill #4\\ea$}}\\hspace{-0.1cm} \\Big)}\n\\let\\emptyset\\varnothing\n\\newcommand{\\svector}[2]{\\Big(\\hspace{-0.1cm}\\mbox{\\small{$\\ba{c}#1  \\\\ #2\\ea$}} \\hspace{-0.1cm}\\Big)}\n\\def\\bnal{\\begin{enumerate}[label=(\\alph*),leftmargin=1.2cm]}\n"
+    },
+    {
+      "uuid": "07810d84-8fca-4f40-b2bf-cecf2561325b",
+      "author": "Claudio Paganini",
+      "content": "\\newcommand{\\h}{\\mathcal{H}}\n\\newcommand{\\F}{\\mathcal{F}}\n\\newcommand{\\Q}{\\mathbb{Q}}\n\\newcommand{\\R}{\\mathbb{R}}\n\\newcommand{\\C}{\\mathbb{C}}\n\\newcommand{\\Z}{\\mathbb{Z}}\n\\newcommand{\\N}{\\mathbb{N}}\n\\newcommand{\\Oc}{\\mathbb{O}}\n\\newcommand{\\mf}{\\mathfrak}\n\\newcommand{\\mb}{\\mathbf}\n\\newcommand{\\mc}{\\mathcal}\n\\newcommand{\\s}{\\mathcal{S}}\n\n\\newcommand{\\bca}{\\begin{cases}}\n\\newcommand{\\eca}{\\end{cases}}\n\\newcommand{\\beq}{\\begin{equation}}\n\\newcommand{\\eeq}{\\end{equation}}\n\\newcommand{\\bpm}{\\begin{pmatrix}}\n\\newcommand{\\epm}{\\end{pmatrix}}\n\\newcommand{\\bal}{\\begin{align}}\n\\newcommand{\\eal}{\\end{align}}\n\n\\DeclareMathOperator{\\supp}{supp}\n\n\\newcounter{aufgabennum}\n\\newcommand{\\aufgabe}[1]{\\subsubsection*{Aufgabe \\theaufgabennum:\\refstepcounter{aufgabennum}\\ \\ignorespaces #1}} \n"
+    }
+  ],
+  "exercises": [
+    {
+      "uuid": "e0b15089-4aa1-491d-b7bb-c12129bcf036",
+      "title": "Zeigen Sie A",
+      "author": "Claudio Paganini",
+      "headers": ["07810d84-8fca-4f40-b2bf-cecf2561325b"],
+      "license": "MIT",
+      "content": "\\aufgabe{*Quantoren (Bonusaufgabe)}\n\\begin{itemize}\n    \\item[i)] Dr\u00fccken Sie die Aussage $\\exists! \\,x : A(x)$ (in Worten: es gibt genau ein\n    $x$ mit der Eigenschaft $A(x)$) nur mit Hilfe der Symbole\n        $\\exists,\\forall,\\land, \\lor, =$ und $\\neg$ aus.\n\n    \\item[ii)] Sei $(a_n)_{n \\in  \\N}$ eine Folge reeller Zahlen. Negieren Sie formal die folgende Aussage:\n\\begin{align*}\n    \\forall \\varepsilon \\in \\R^+ \\;\\;\\exists N \\in \\N \\;\\; \\forall n \\in \\N \\::\\: (n \\geq N\n    \\Rightarrow |a_n|\\leq \\varepsilon),\n\\end{align*}\nwobei $\\R^+$ die Menge der positiven reellen Zahlen ist und $|a|$ den Betrag\nvon $a$ bezeichnet. Beschreiben sie anhand einer Skizze, was die Aussage und\n        ihre Negation \u00fcber die Folge $(a_n)_{n \\in \\N}$ aussagen.\n\\end{itemize}\n\\textit{Die Bonusaufgabe wird nicht bewertet. Die Bearbeitung wird aber allen\nempfohlen, die sich nicht sicher mit Quantoren f\u00fchlen.}\n\n"
+    },
+    {
+      "uuid": "6f1f4e21-705b-4c48-b872-a98bb8497a75",
+      "title": "Zeigen Sie B",
+      "author": "Claudio Paganini",
+      "headers": ["07810d84-8fca-4f40-b2bf-cecf2561325b"],
+      "license": "MIT",
+      "content": "\n\\aufgabe{} Sei $(a_n)_{n\\in\\N}$ eine Folge von Null verschiedener komplexer Zahlen mit folgender Eigenschaft:\\\\\nEs gibt ein $a\\in\\C$, so dass zu jedem $C>0$ ein $N\\in\\N$ existiert, so dass f\u00fcr alle $n\\in\\N$ mit $n>N$ gilt:\n$$d(a_n,a)>C\\,.$$\n\\begin{itemize}\n\t\\item[i)] Zeigen Sie, dass sogar jede beliebige komplexe Zahl $z\\in\\C$ f\u00fcr die Folge $(a_n)_{n\\in\\N}$ dieselbe Eigenschaft wie die komplexe Zahl $a$ besitzt.\n\t\\item[ii)] Existiert $\\displaystyle \\lim_{n\\rightarrow\\infty}\\frac{1}{a_n}$?\\\\[0.3em]\n\t(Die Antwort ist durch Beweis oder Gegenbeispiel zu begr\u00fcnden!)\n\\end{itemize}\n\n\\aufgabe{} Sei $(a_n)_{n\\in\\N}$ eine Folge positiver reeller Zahlen mit $\\lim_{n\\rightarrow\\infty}a_n=0$. Beweisen Sie, dass es unendlich viele Indizes $n$ gibt, so dass $a_m\\leq a_n$ f\u00fcr alle $m\\geq n$ gilt.\n"
+    },
+    {
+      "uuid": "a61fea5e-2d52-4713-a89c-255f83135611",
+      "title": "Zeigen Sie C",
+      "author": "Claudio Paganini",
+      "headers": ["07810d84-8fca-4f40-b2bf-cecf2561325b"],
+      "license": "MIT",
+      "content": "\n\\aufgabe{Intervallschachtelung} F\u00fcr ein Intervall $I\\subset\\R$ der Form $[a,b]$ mit $a<b$ definiert man die \\textit{L\u00e4nge} $|I|$ des Intervalls $I$ als $b-a$.\\\\\nEine \\textit{Intervallschachtelung} ist eine Folge $I_1,I_2,I_3,\\ldots$ von Intervallen der Form $I_n=[a_n,b_n]\\subset\\R$ mit $a_n<b_n$, die folgende Eigenschaften besitzt:\n\\begin{itemize}\n\t\\item[1.] $I_{n+1}\\subset I_n$ f\u00fcr $n=1,2,3,\\ldots$\n\t\\item[2.] Zu jedem $\\varepsilon>0$ gibt es ein Intervall $I_n$ der L\u00e4nge $|I_n|<\\varepsilon$.\n\\end{itemize}\nZeigen Sie, dass es zu einer Intervallschachtelung $(I_n)_{n\\in\\N}$ genau eine reelle Zahl $a$ gibt, so dass $a\\in I_n$ f\u00fcr alle $n\\in\\N$.\\\\\n\n\\textit{Hinweis:} Beweisen Sie zuerst, dass man durch eine Intervallschachtelung zwei konvergente Folgen $(a_n)_{n\\in\\N}$ und $(b_n)_{n\\in\\N}$ erh\u00e4lt. Zeigen Sie dann, dass die jeweiligen Limites \u00fcbereinstimmen, also $\\lim_{n\\rightarrow\\infty}a_n=\\lim_{n\\rightarrow\\infty}b_n$.\n"
+    },
+    {
+      "uuid": "e8d1eb9e-01c6-4e2e-9d2b-b9f155cbf1ea",
+      "title": "Zeigen Sie D",
+      "author": "Claudio Paganini",
+      "headers": ["07810d84-8fca-4f40-b2bf-cecf2561325b"],
+      "license": "MIT",
+      "content": "\n\\aufgabe{Intervallschachtelung} F\u00fcr ein Intervall $I\\subset\\R$ der Form $[a,b]$ mit $a<b$ definiert man die \\textit{L\u00e4nge} $|I|$ des Intervalls $I$ als $b-a$.\\\\\nEine \\textit{Intervallschachtelung} ist eine Folge $I_1,I_2,I_3,\\ldots$ von Intervallen der Form $I_n=[a_n,b_n]\\subset\\R$ mit $a_n<b_n$, die folgende Eigenschaften besitzt:\n\\begin{itemize}\n\t\\item[1.] $I_{n+1}\\subset I_n$ f\u00fcr $n=1,2,3,\\ldots$\n\t\\item[2.] Zu jedem $\\varepsilon>0$ gibt es ein Intervall $I_n$ der L\u00e4nge $|I_n|<\\varepsilon$.\n\\end{itemize}\nZeigen Sie, dass es zu einer Intervallschachtelung $(I_n)_{n\\in\\N}$ genau eine reelle Zahl $a$ gibt, so dass $a\\in I_n$ f\u00fcr alle $n\\in\\N$.\\\\\n\n\\textit{Hinweis:} Beweisen Sie zuerst, dass man durch eine Intervallschachtelung zwei konvergente Folgen $(a_n)_{n\\in\\N}$ und $(b_n)_{n\\in\\N}$ erh\u00e4lt. Zeigen Sie dann, dass die jeweiligen Limites \u00fcbereinstimmen, also $\\lim_{n\\rightarrow\\infty}a_n=\\lim_{n\\rightarrow\\infty}b_n$.\n"
+    },
+    {
+      "uuid": "0a2abeb8-3df4-4408-acab-5a67d7a63e23",
+      "title": "Ist \u03c6 die Identit\u00e4tsabbildung?",
+      "author": "Claudio Paganini",
+      "headers": ["45db2cb4-28db-443e-823d-afe3db722a45"],
+      "license": "MIT",
+      "content": "\\subsection*{Aufgabe 1}\\mbox{}\nSei $\\phi: \\E \\rightarrow\\E $ eine winkelerhaltende Abbildung, mit der Eigenschaft, dass f\\\"ur zwei Punkte $P,Q\\in \\E$, $P\\neq Q$ gilt, dass $\\phi(P)=P$ und $\\phi(Q)=Q$. Ist $\\phi$ die Identit\\\"atsabbildung?\n\n\n\\begin{taggedblock}{Solution}\n    \n\n\n\\smallskip \n\\noindent \\emph{L\\\"osung.}\\mbox{}\nNein. Eine Spiegelung entlang der Geraden $g(P,Q)$ ist winkelerhaltend und l\\\"asst $g(P,Q)$ invariant, ist aber nicht die Identit\\\"at. \n\n\\end{taggedblock}\n"
+    },
+    {
+      "uuid": "62aece28-71d5-49d8-be7b-ef1cc75ec438",
+      "title": "Was ist der Richtungsvektor einer Gerade, welche senkrecht auf g steht?",
+      "author": "Claudio Paganini",
+      "headers": ["45db2cb4-28db-443e-823d-afe3db722a45"],
+      "license": "MIT",
+      "content": "\\subsection*{Aufgabe 2}\\mbox{}\n\\bnal\n\\item \nEs sei $g=\\{ P+t\\cdot v\\,|\\, t\\in \\R\\}$ eine Gerade mit Richtungsvektor $v=(a,b)\\in \\R^2$.\nWas ist der Richtungsvektor einer Gerade, welche senkrecht auf $g$ steht?\n\\item Wir betrachten die Gerade \n\\[ \\hspace{1cm} g\\,\\,:=\\,\\, \\{ (2,3)+t\\cdot (1,1)\\,|\\, t\\in \\R\\}.\\]\nWas ist die Spiegelung von $P=(-1,2)$ entlang von $g$?\n\\enm\n\n\\begin{taggedblock}{Solution}\n    \n\n\n\\smallskip \n\\noindent \\emph{L\\\"osung.}\\mbox{}\n\\bnal\n\\item Ein m\\\"oglicher Richtungsvektor ist $(-b,a)$, denn $\\svector{a}{b}\\cdot \\svector{-b}{a}=-ab+ab=0$.\n\\item Es folgt aus (a), dass die Gerade $h$ durch $(-1,2)$, welche senkrecht auf $g$ steht, gegeben ist durch \n$\\{ (-1,2)+s\\cdot (-1,1)\\,|\\,s\\in \\R\\}$. Der Schnittpunkt $Q$ von $g$ und $h$ berechnet sich wie folgt:\n\\[ \\mindent \\ba{crcl} (1)&\\hspace{-0.2cm} 2+t\\!\\cdot\\!  1 &\\hspace{-0.2cm}=&\\hspace{-0.2cm}-1+s\\!\\cdot\\!  (-1)\\\\\n(2)&\\hspace{-0.2cm}3+t\\!\\cdot\\!  1&\\hspace{-0.2cm}=&\\hspace{-0.2cm} 2+s\\!\\cdot\\!  1\\ea \\,\\, \\Rightarrow \\,\\,\n\\ba{crcl} (1')&\\hspace{-0.2cm} t &\\hspace{-0.2cm}=&\\hspace{-0.2cm}-3-s\\\\\n(2)&\\hspace{-0.2cm}3+t&\\hspace{-0.2cm}=&\\hspace{-0.2cm} 2+ s\\ea \\,\\, \\Rightarrow \n \\,\\,3+(-3-s)\\,=\\,2+s\\,\\, \\Rightarrow \\,\\,  s\\,=\\,-1.\n\\]\nWir erhalten nun $Q=(-1,2)+1\\cdot  (-1,1)=(0,1)$. Das Spiegelbild ist jetzt gegeben durch den Punkt \n$Q+(Q-P)=(0,1)+(1,-1)=(1,0)$. \n\\enm\n\n\n\n\\begin{figure}[h]\n\\begin{center}\n\\input{spiegelung-explizit.pstex_t}\n\\caption{}\\label{fig:}\n\\end{center}\n\\end{figure}\n\\end{taggedblock}\n\n"
+    },
+    {
+      "uuid": "81a3d931-2436-44b4-af78-c115f90c5a4f",
+      "title": "L\u00e4ngenerhaltende Abbildung injektiv/surjektiv?",
+      "author": "Claudio Paganini",
+      "headers": ["45db2cb4-28db-443e-823d-afe3db722a45"],
+      "license": "MIT",
+      "content": "\\subsection*{Aufgabe 3}\nEs sei $A\\subset \\R^n$ eine Teilmenge. Wir sagen eine Abbildung $f\\colon A\\to A$ ist l\\\"angenerhaltend, wenn f\\\"ur alle $P,Q\\in A$ gilt, dass $\\|f(P)-f(Q)\\|=\\|P-Q\\|$.\n\\bnal\n\\item Ist jede l\\\"angenerhaltende Abbildung injektiv?\n\\item Ist jede l\\\"angenerhaltende Abbildung surjektiv?\n\\enm\n\n\n\\begin{taggedblock}{Solution}\n    \n\n\n\n\\smallskip\n\\noindent \\emph{L\\\"osung.}\\mbox{}\n\\bnal\n\\item Ja! Es seien $P,Q\\in A$ mit  $P\\ne Q$. Wir m\\\"ussen zeigen, dass $f(P)\\ne f(Q)$.\nIn der Tat  gilt \n\\[ \\mindent \\ba{rlll} \\|f(P)-f(Q)\\|&=\\,\\,\\|P-Q\\|&\\ne\\,\\, 0\\quad \\Longrightarrow \\,\\, f(P)\\ne f(Q).\\\\\n&\\smup&\\smup\\\\\n&\\hspace{-1.6cm}\\nbox{da $f$ l\\\"angenerhaltend}&\\nbox{da $P\\ne Q$}\\ea\\]\n\\item Nein! Z.B.\\ betrachten wir $A=[0,\\infty)$ und $f\\colon A\\to A$, gegeben durch $f(x)=x+1$. Die Abbildung ist l\\\"angenerhaltend, aber nicht surjektiv, denn $0$ liegt beispielsweise nicht im Bild von $f$. \n\\enm \n\n\\end{taggedblock}\n"
+    },
+    {
+      "uuid": "8a309eea-b840-4677-aded-107070649b6f",
+      "title": "Punktspiegelungen beschreiben",
+      "author": "Claudio Paganini",
+      "headers": ["45db2cb4-28db-443e-823d-afe3db722a45"],
+      "license": "MIT",
+      "content": "\\subsection*{Aufgabe 4}\n\\mbox{}\n\\bnal\n\\item Geben Sie eine geometrische Definition der Spiegelung in einem Punkt $P\\in \\E$.\n\\item Zeigen Sie, dass die Spiegelung im Ursprung $(0,0)\\in \\E=\\R^2$ l\\\"angenerhaltend ist.\n\\item \nWir kennen nun folgende Beispiele von l\\\"angenerhaltende Abbildung:\n\\bnml\n\\item[(i)] Verschiebung,\n\\item[(ii)] Spiegelung entlang einer Gerade,\n\\item[(iii)]  Drehung um einen Punkt.\n\\enm\nWie passen da die Punktspiegelung rein? Genauer gesagt, kann man Punkt\\-spiegelungen durch Spiegelungen oder Drehungen beschreiben?\n\\enm\n\n\\begin{taggedblock}{Solution}\n\\noindent \\emph{L\\\"osung.}\\mbox{}\n\\bnal\n\\item Es sei $P\\in \\E$ und $Q\\in \\E$ ein anderer  Punkt.\nEs sei $g=g(P,Q)$ die Gerade durch $P$ und $Q$. Wir definieren wir die Punktspiegelung von $Q$ als den Punkt $R$ auf $g(P,Q)$ mit den folgenden beiden Eigenschaften:\n\\bnm\n\\item[(1)] Der Punkt $R$ liegt auf der anderen Seite von $P$.\n\\item[(2)] Es gilt $\\ell(\\ol{PR})=\\ell(\\ol{PQ})$.\n\\enm\n\\item Eine Punktspiegelung um $P$ ist das gleiche wie eine Drehung um $P$ um den Winkel $\\pi$. \n\\enm\n\\end{taggedblock}\n\n"
+    },
+    {
+      "uuid": "0a208863-0ed8-4fdd-aa22-4413783d9bd2",
+      "title": "Verkn\u00fcpfung von zwei Verschiebungen",
+      "author": "Claudio Paganini",
+      "headers": ["45db2cb4-28db-443e-823d-afe3db722a45"],
+      "license": "MIT",
+      "content": "\\subsection*{Aufgabe 5}\nDie Verkn\\\"upfung von zwei Verschiebungen ist nat\\\"urlich wiederum eine Verschiebung.\n\\bnal\n\\item Ist die Verkn\\\"upfung von zwei Drehungen wiederum eine Drehung? Die Drehungen k\\\"onnen dabei um zwei verschiedene Punkte erfolgen.\n\\item Was kann man \\\"uber die Verkn\\\"upfung von zwei Spiegelungen entlang von zwei Geraden $g$ und $h$ sagen? \nIst dies wiederum eine Spiegelung? Oder eine andere Art von l\\\"angenerhaltender Abbildung?\n\\enm\n\n\\begin{taggedblock}{Solution}\n\n\\noindent \\emph{L\\\"osung.}\\mbox{}\n\\bnal\n\\item Die Verkn\\\"upfung einer Drehung um den Punkt $P$ mit Drehwinkel $\\alpha$ und einer Drehung um den Punkt $Q$ mit Drehwinkel $\\beta$ ist  eine Drehung um einen (anderen) Punkt mit Drehwinkel $\\alpha+\\beta$, , au\\ss er, wenn beide Drehwinkel $\\pi$ sind, dan handelt es sich um eine Verschiebung. Wir werden das sp\\\"ater noch genauer diskutieren.\n\\item Es seien $g$ und $h$ zwei Geraden. Wir unterscheiden zwei F\\\"alle\n\\bnm\n\\item[(1)] Wenn sich $g$ und $h$ in genau einem Punkt $P$ schneiden, dann ist die Verkn\\\"upfung der zwei Spiegelungen eine Drehung um den Punkt $P$. \nWir werden diese Aussage demn\\\"achst noch beweisen. \n\\item[(2)] Wenn sich $g$ und $h$ nicht schneiden, dann ist die Verkn\\\"upfung der zwei Spiegelungen eine Verschiebung.\n\\enm\n\\enm\n\n\\end{taggedblock}\n"
+    },
+    {
+      "uuid": "0501d7e7-a8d9-4677-8ee9-98fe05b83aa5",
+      "title": "Parallelen zu Parallelen",
+      "author": "Claudio Paganini",
+      "headers": ["45db2cb4-28db-443e-823d-afe3db722a45"],
+      "license": "MIT",
+      "content": "\\subsection*{Aufgabe 6}\nEs sei $g$ eine Gerade. Wir bezeichnen mit $s_g\\colon \\E\\to \\E$ die Spiegelung entlang von $g$. \n\\bnal\n\\item Es sei $Q$ ein Punkt in $\\E$. Vervollst\\\"andigen Sie folgenden Satz:  es gilt $s_g(Q)=Q$ genau dann, wenn ???????\n\\item Es sei $h$ eine Gerade, welche parallel zu $g$ verl\\\"auft. Zeigen Sie, dass $s_g(h)$ ebenfalls parallel zu $g$ verl\\\"auft.\n\\enm\n\n\\begin{taggedblock}{Solution}\n\\noindent \\emph{L\\\"osung.}\\mbox{}\n\\bnal\n\\item  Es gilt $s_g(Q)=Q$ genau dann, wenn $Q\\in g$. \n\\item  Nehmen wir an, dass $s_g(h)$ nicht  parallel zu $g$ verl\\\"auft. Dann besitzen $s_g(h)$ und $g$ genau einen Schnittpunkt $P$.\nDa $P$ auf $g$ liegt folgt aus (a), dass $s_g(P)=P$. Wenn wir $s_g(h)$ also wieder zur\\\"uckspiegeln, dann sehen wir, dass $P$ ein Schnittpunkt von $g$ und $h$ ist. Also waren $g$ und $h$ nicht parallel.\n\\enm\n\\end{taggedblock}\n\n\n\n"
+    }
+  ]
+}

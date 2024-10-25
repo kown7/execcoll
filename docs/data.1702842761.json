@@ -1,0 +1,73 @@
+{
+  "templates": [
+    {
+      "uuid": "28253563-49d5-4769-9f09-cb7d61cd39b2",
+      "author": "Claudio Paganini",
+      "title": "Uni Ravensburg",
+      "fields": [
+        ["HEADERS", ""],
+        ["TITLE", "Title"],
+        ["SUBTITLE", "Subtitle"],
+        ["EXERCISETITLE", "Exercise Title"],
+        ["DEADLINE", "Deadline"],
+        ["EXERCISES", ""],
+        ["INITAUFGCNT", "Initiale Aufgabennummer"]
+      ],
+      "content": "\\documentclass[11pt,a4paper]{article}\n\n\\usepackage[a4paper,nohead,margin=2.5cm]{geometry}\n\\usepackage{amsmath,amssymb,latexsym,amsthm,epsfig,stmaryrd}\n\\usepackage{german}\n\\usepackage{enumerate}\n\\usepackage[mathscr]{eucal}\n\\usepackage[utf8]{inputenc}\n\n\\long\\def\\ignorethis#1{}\n\\parindent0cm \n\n((* HEADERS *))\n\n\\setcounter{aufgabennum}{((* INITAUFGCNT *))}\n\\begin{document}\n\n\\pagestyle{empty}\n\n\\mbox{}\\vspace{-1.8cm}\n\\noindent    \n\n{\\Large\\bfseries\n((* TITLE *))}\\\\\n((* SUBTITLE *))\n\\vspace{2mm}\n\\hrule\n\\vspace{5mm}\n\\begin{center}\n\t{\\large\\bfseries ((* EXERCISETITLE *))}\\\\\n\t\\vspace{2mm}\n\t{Abgabe: ((* DEADLINE *))}\n\\end{center}\n\\bigskip\n\n((* EXERCISES *))\n\n\\end{document}\n"
+    },
+    {
+      "uuid": "fe6da4eb-838b-4293-af75-ad4e3a7db1a5",
+      "title": "Barebones Template",
+      "AUTHOR!": "kown7",
+      "fields": [
+        ["TITLE", "Title"],
+        ["DEADLINE", "Datum"],
+        ["AUTHOR", "Author"],
+        ["HEADERS", ""],
+        ["EXERCISES", ""]
+      ],
+      "content": "\\documentclass[10pt,a4paper]{article}\n\n\\usepackage{amsmath,amssymb,latexsym,amsthm,epsfig,stmaryrd}\n\\usepackage{enumerate}\n\\usepackage[mathscr]{eucal}\n\\usepackage[utf8]{inputenc}\n\n((* HEADERS *))\n\n\\title{((* TITLE *))}\n\\date{((* DEADLINE *))}\n\\author{((* AUTHOR *))}\n\\begin{document}\n\n\\maketitle\n\\newpage\n\n((* EXERCISES *))\n\n\\end{document}\n"
+    }
+  ],
+  "headers": [
+    {
+      "uuid": "07810d84-8fca-4f40-b2bf-cecf2561325b",
+      "author": "Claudio Paganini",
+      "content": "\\newcommand{\\h}{\\mathcal{H}}\n\\newcommand{\\F}{\\mathcal{F}}\n\\newcommand{\\Q}{\\mathbb{Q}}\n\\newcommand{\\R}{\\mathbb{R}}\n\\newcommand{\\C}{\\mathbb{C}}\n\\newcommand{\\Z}{\\mathbb{Z}}\n\\newcommand{\\N}{\\mathbb{N}}\n\\newcommand{\\Oc}{\\mathbb{O}}\n\\newcommand{\\mf}{\\mathfrak}\n\\newcommand{\\mb}{\\mathbf}\n\\newcommand{\\mc}{\\mathcal}\n\\newcommand{\\s}{\\mathcal{S}}\n\n\\newcommand{\\bca}{\\begin{cases}}\n\\newcommand{\\eca}{\\end{cases}}\n\\newcommand{\\beq}{\\begin{equation}}\n\\newcommand{\\eeq}{\\end{equation}}\n\\newcommand{\\bpm}{\\begin{pmatrix}}\n\\newcommand{\\epm}{\\end{pmatrix}}\n\\newcommand{\\bal}{\\begin{align}}\n\\newcommand{\\eal}{\\end{align}}\n\n\\DeclareMathOperator{\\supp}{supp}\n\n\\newcounter{aufgabennum}\n\\newcommand{\\aufgabe}[1]{\\subsubsection*{Aufgabe \\theaufgabennum:\\refstepcounter{aufgabennum}\\ \\ignorespaces #1}} \n"
+    }
+  ],
+  "exercises": [
+    {
+      "uuid": "e0b15089-4aa1-491d-b7bb-c12129bcf036",
+      "title": "Zeigen Sie A",
+      "author": "Claudio Paganini",
+      "headers": ["07810d84-8fca-4f40-b2bf-cecf2561325b"],
+      "license": "MIT",
+      "content": "\\aufgabe{*Quantoren (Bonusaufgabe)}\n\\begin{itemize}\n    \\item[i)] Dr\u00fccken Sie die Aussage $\\exists! \\,x : A(x)$ (in Worten: es gibt genau ein\n    $x$ mit der Eigenschaft $A(x)$) nur mit Hilfe der Symbole\n        $\\exists,\\forall,\\land, \\lor, =$ und $\\neg$ aus.\n\n    \\item[ii)] Sei $(a_n)_{n \\in  \\N}$ eine Folge reeller Zahlen. Negieren Sie formal die folgende Aussage:\n\\begin{align*}\n    \\forall \\varepsilon \\in \\R^+ \\;\\;\\exists N \\in \\N \\;\\; \\forall n \\in \\N \\::\\: (n \\geq N\n    \\Rightarrow |a_n|\\leq \\varepsilon),\n\\end{align*}\nwobei $\\R^+$ die Menge der positiven reellen Zahlen ist und $|a|$ den Betrag\nvon $a$ bezeichnet. Beschreiben sie anhand einer Skizze, was die Aussage und\n        ihre Negation \u00fcber die Folge $(a_n)_{n \\in \\N}$ aussagen.\n\\end{itemize}\n\\textit{Die Bonusaufgabe wird nicht bewertet. Die Bearbeitung wird aber allen\nempfohlen, die sich nicht sicher mit Quantoren f\u00fchlen.}\n\n"
+    },
+    {
+      "uuid": "6f1f4e21-705b-4c48-b872-a98bb8497a75",
+      "title": "Zeigen Sie B",
+      "author": "Claudio Paganini",
+      "headers": ["07810d84-8fca-4f40-b2bf-cecf2561325b"],
+      "license": "MIT",
+      "content": "\n\\aufgabe{} Sei $(a_n)_{n\\in\\N}$ eine Folge von Null verschiedener komplexer Zahlen mit folgender Eigenschaft:\\\\\nEs gibt ein $a\\in\\C$, so dass zu jedem $C>0$ ein $N\\in\\N$ existiert, so dass f\u00fcr alle $n\\in\\N$ mit $n>N$ gilt:\n$$d(a_n,a)>C\\,.$$\n\\begin{itemize}\n\t\\item[i)] Zeigen Sie, dass sogar jede beliebige komplexe Zahl $z\\in\\C$ f\u00fcr die Folge $(a_n)_{n\\in\\N}$ dieselbe Eigenschaft wie die komplexe Zahl $a$ besitzt.\n\t\\item[ii)] Existiert $\\displaystyle \\lim_{n\\rightarrow\\infty}\\frac{1}{a_n}$?\\\\[0.3em]\n\t(Die Antwort ist durch Beweis oder Gegenbeispiel zu begr\u00fcnden!)\n\\end{itemize}\n\n\\aufgabe{} Sei $(a_n)_{n\\in\\N}$ eine Folge positiver reeller Zahlen mit $\\lim_{n\\rightarrow\\infty}a_n=0$. Beweisen Sie, dass es unendlich viele Indizes $n$ gibt, so dass $a_m\\leq a_n$ f\u00fcr alle $m\\geq n$ gilt.\n"
+    },
+    {
+      "uuid": "a61fea5e-2d52-4713-a89c-255f83135611",
+      "title": "Zeigen Sie C",
+      "author": "Claudio Paganini",
+      "headers": ["07810d84-8fca-4f40-b2bf-cecf2561325b"],
+      "license": "MIT",
+      "content": "\n\\aufgabe{Intervallschachtelung} F\u00fcr ein Intervall $I\\subset\\R$ der Form $[a,b]$ mit $a<b$ definiert man die \\textit{L\u00e4nge} $|I|$ des Intervalls $I$ als $b-a$.\\\\\nEine \\textit{Intervallschachtelung} ist eine Folge $I_1,I_2,I_3,\\ldots$ von Intervallen der Form $I_n=[a_n,b_n]\\subset\\R$ mit $a_n<b_n$, die folgende Eigenschaften besitzt:\n\\begin{itemize}\n\t\\item[1.] $I_{n+1}\\subset I_n$ f\u00fcr $n=1,2,3,\\ldots$\n\t\\item[2.] Zu jedem $\\varepsilon>0$ gibt es ein Intervall $I_n$ der L\u00e4nge $|I_n|<\\varepsilon$.\n\\end{itemize}\nZeigen Sie, dass es zu einer Intervallschachtelung $(I_n)_{n\\in\\N}$ genau eine reelle Zahl $a$ gibt, so dass $a\\in I_n$ f\u00fcr alle $n\\in\\N$.\\\\\n\n\\textit{Hinweis:} Beweisen Sie zuerst, dass man durch eine Intervallschachtelung zwei konvergente Folgen $(a_n)_{n\\in\\N}$ und $(b_n)_{n\\in\\N}$ erh\u00e4lt. Zeigen Sie dann, dass die jeweiligen Limites \u00fcbereinstimmen, also $\\lim_{n\\rightarrow\\infty}a_n=\\lim_{n\\rightarrow\\infty}b_n$.\n"
+    },
+    {
+      "uuid": "e8d1eb9e-01c6-4e2e-9d2b-b9f155cbf1ea",
+      "title": "Zeigen Sie D",
+      "author": "Claudio Paganini",
+      "headers": ["07810d84-8fca-4f40-b2bf-cecf2561325b"],
+      "license": "MIT",
+      "content": "\n\\aufgabe{Intervallschachtelung} F\u00fcr ein Intervall $I\\subset\\R$ der Form $[a,b]$ mit $a<b$ definiert man die \\textit{L\u00e4nge} $|I|$ des Intervalls $I$ als $b-a$.\\\\\nEine \\textit{Intervallschachtelung} ist eine Folge $I_1,I_2,I_3,\\ldots$ von Intervallen der Form $I_n=[a_n,b_n]\\subset\\R$ mit $a_n<b_n$, die folgende Eigenschaften besitzt:\n\\begin{itemize}\n\t\\item[1.] $I_{n+1}\\subset I_n$ f\u00fcr $n=1,2,3,\\ldots$\n\t\\item[2.] Zu jedem $\\varepsilon>0$ gibt es ein Intervall $I_n$ der L\u00e4nge $|I_n|<\\varepsilon$.\n\\end{itemize}\nZeigen Sie, dass es zu einer Intervallschachtelung $(I_n)_{n\\in\\N}$ genau eine reelle Zahl $a$ gibt, so dass $a\\in I_n$ f\u00fcr alle $n\\in\\N$.\\\\\n\n\\textit{Hinweis:} Beweisen Sie zuerst, dass man durch eine Intervallschachtelung zwei konvergente Folgen $(a_n)_{n\\in\\N}$ und $(b_n)_{n\\in\\N}$ erh\u00e4lt. Zeigen Sie dann, dass die jeweiligen Limites \u00fcbereinstimmen, also $\\lim_{n\\rightarrow\\infty}a_n=\\lim_{n\\rightarrow\\infty}b_n$.\n"
+    }
+  ]
+}
